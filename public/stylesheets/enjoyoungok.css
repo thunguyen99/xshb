@@ -82,6 +82,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .fenye02 ul{ margin:0 auto 0 auto;}
 .fenye02 li{ width:6px; height:6px; background:url(../images/fenye03.jpg) no-repeat; margin:0 10px 0 10px; float:left; display:inline;}
 .fenye03{ width:6px; height:6px; background:url(../images/fenye04.jpg) no-repeat; margin:0 10px 0 10px;}
+.ranking{ width:978px; margin:10px; overflow:hidden;}
 
 
 .neiye_a1 { height:517px; width:998px; border-bottom:1px solid #dadada; }
