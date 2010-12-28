@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>星尚画报，星尚OK杂志！</title>
+<title>星尚画报</title>
 <link href="../stylesheets/enjoyoungok.css" rel="stylesheet" type="text/css" />
 <link href="../stylesheets/thickbox.css" rel="stylesheet" type="text/css" />
 <script src="../javascripts/jquery.min.js"  type="text/javascript"></script>
@@ -21,6 +21,10 @@ $(function(){
                      btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#ffffff",
                      btn_borderHoverColor:"#000000",btn_borderWidth:1}
         });
+		
+		//after slideshow initialize, focus images are moved into new container
+		//need to re-thickboxize them
+		tb_init("#KSS_content a.thickbox, #KSS_contentClone a.thickbox");
     })
 
 </script>
@@ -44,7 +48,7 @@ $("#reception").slideUp("normal");
         <div class="blank0"></div>
       </div>
       <!--登录结束-->
-      <div ><a href="#"><img src="../images/eyok.jpg" /></a></div>
+      <div ><a href="/"><img src="../images/xshb_logo.jpg" /></a><img src="../images/banner-01.jpg" /></div>
       <!--导航tiao-->
       <div class="oknav">
         <div class="oknav_a1"><a class="current">首 页</a><a href="#">天 下</a><a href="#">商 业</a><a href="#">文 化</a><a href="#">设 计</a><a href="#">精 英</a><a href="#">时 尚</a><a href="#">指 南</a></div>
@@ -74,27 +78,32 @@ $("#reception").slideUp("normal");
         <!--跑马灯结束-->
         <!--焦点图-->
         <div class="ff">
-          <div id="KinSlideshow" style="visibility:hidden;"><a href="#" target="_blank"><img src="../images/1.jpg" alt="沟通-Lady Gaga 美国歌手" width="662" height="313" /></a><a href="#" target="_blank"><img src="../images/2.jpg" alt="沟通-姜文 中国导演" width="662" height="313" /></a> <a href="#" target="_blank"><img src="../images/3.jpg" alt="沟通-汤唯 中国演员" width="662" height="313" /></a> <a href="#" target="_blank"><img src="../images/4.jpg" alt="传承-Sheikh Hamdan bin Mohammed bin Rashid al Maktoum 迪拜王储" width="662" height="313" /></a> </div>
+          <div id="KinSlideshow" style="visibility:hidden;">
+          <a href="news_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/1.jpg" alt="沟通-Lady Gaga 美国歌手" width="662" height="313" /></a>
+          <a href="news_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/2.jpg" alt="沟通-姜文 中国导演" width="662" height="313" /></a>
+          <a href="news_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/3.jpg" alt="沟通-汤唯 中国演员" width="662" height="313" /></a>
+          <a href="news_04.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/4.jpg" alt="传承-Sheikh Hamdan bin Mohammed bin Rashid al Maktoum 迪拜王储" width="662" height="313" /></a>
+          </div>
         </div>
         <!--焦点图结束-->
         <!--广告投放-->
-        <div class="ad"><a href="#" target="_blank"><img src="../images/eyok16.jpg" /></a></div>
+        <div class="ad"><a href="ifram/aboutus.html?keepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=605"><img src="../images/eyok16.jpg" /></a></div>
         <!--广告投放结束-->
         <!--本期精华-->
         <div class="hot">
           <div class="hot_01"></div>
           <div class="hot_02">
-            <div class="hot_02content"><span class="span_imgbg"><img src="../images/a1.jpg" /></span><span class="span_title"><a ><b class="red">沟通</b>-范冰冰 </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="ifram/news.html?keepThis=true&amp;TB_iframe=true&amp;height=530&amp;width=640" title="新闻内容" class="thickbox">“如果现在一个20多岁的人没有野心、霸气，那他是没有办法在这个社会上立足的。我会用一种大无畏的精神来盖住那些懒惰的想法。”</a></p></span></div>
-            <div class="hot_02content"><span class="span_imgbg"><img src="../images/a2.jpg" /></span><span class="span_title"><a href="#"><b class="red">传承</b>-HRH Prince William of Wales </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="ifram/news.html?keepThis=true&amp;TB_iframe=true&amp;height=530&amp;width=640" title="新闻内容" class="thickbox">“是否想成为国王对我而言并不是一个问题，而是一个与生俱来的责任。”</a></p></span></div>
-            <div class="hot_02content"><span class="span_imgbg"><img src="../images/a3.jpg" /></span><span class="span_title"><a href="#"><b class="red">创新</b>-Pardis Sabeti</a></span><span class="span_content"><p><a style="color:#6d6d6d" href="ifram/news.html?keepThis=true&amp;TB_iframe=true&amp;height=530&amp;width=640" title="新闻内容" class="thickbox">“从某些角度来看，开展研究和组建乐队的本质是一样的。”</a></p></span></div>
+            <div class="hot_02content"><span class="span_imgbg"><a href="jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/a1.jpg" /></a></span><span class="span_title"><a href="jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-范冰冰 </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“如果现在一个20多岁的人没有野心、霸气，那他是没有办法在这个社会上立足的。我会用一种大无畏的精神来盖住那些懒惰的想法。”</a></p></span></div>
+            <div class="hot_02content"><span class="span_imgbg"><a href="jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/a2.jpg" /></a></span><span class="span_title"><a href="jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-HRH Prince William of Wales </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“是否想成为国王对我而言并不是一个问题，而是一个与生俱来的责任。”</a></p></span></div>
+            <div class="hot_02content"><span class="span_imgbg"><a href="jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/a3.jpg" /></a></span><span class="span_title"><a href="jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-Pardis Sabeti</a></span><span class="span_content"><p><a style="color:#6d6d6d" href="jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“从某些角度来看，开展研究和组建乐队的本质是一样的。”</a></p></span></div>
             <div class=" blank0"></div>
           </div>
         </div>
         <!--本期精华结束-->
         <!--微薄开心-->
         <div class="link">
-          <div class="sina"><a href="#" target="_blank">成为粉丝</a></div>
-          <div class="kaixin"><a href="#" target="_blank">加为好友</a></div>
+          <div class="sina"><a href="http://t.sina.com.cn/xshb" target="_blank">成为粉丝</a></div>
+          <div class="kaixin"><a href="http://www.kaixin001.com/home/?uid=94844394" target="_blank">加为好友</a></div>
           <div class="blank0"></div>
         </div>
         <!--微薄开心结束-->
@@ -109,7 +118,7 @@ $("#reception").slideUp("normal");
               <ul id="sub_01">
                 <li style="padding-left:5px"><a href="http://www.enjoyoung.cn/news/content/287" target="_blank">星尚明星榜</a></li>
                 <li style="padding-left:5px;border-top:1px solid #fff; "><a href="ranking.html" >星尚价值榜</a></li>
-                <li style="padding-left:5px;border-top:1px solid #fff; "><a href="#" target="_blank">星尚榜3</a></li>
+                <li style="padding-left:5px;border-top:1px solid #fff; "><a href="javascript:alert('即将推出！');">星尚榜3</a></li>
               </ul>
             </li>
             <li class="mainlevel" id="mainlevel_02"><a href="#" target="_blank">零售网点</a> </li>
@@ -120,7 +129,7 @@ $("#reception").slideUp("normal");
         </div>
         <!--小导航结束-->
         <!--最新鉴赏-->
-        <div class="appreciate"><span><img src="../images/eyok14.jpg" /></span><span style="margin:10px;"><a href="#"><img src="../images/eyok15.jpg" /></a></span></div>
+        <div class="appreciate"><span><img src="../images/eyok14.jpg" /></span><span style="margin:10px;"><a href="appreciate.html"><img src="../images/eyok15.jpg" /></a></span></div>
         <!--最近鉴赏结束-->
         <!--小广告-->
         <div class="ad"><a href="#" target="_blank"><img src="../images/eyok17.jpg" /></a></div>
@@ -136,7 +145,7 @@ $("#reception").slideUp("normal");
               </ul>
             </div>
             <div class="blank0"></div>
-            <div class="questionsbottom"><a href="#"><img src="../images/eyok21.jpg" /></a><a href="#"><img src="../images/eyok20.jpg" /></a>
+            <div class="questionsbottom"><a href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=78" target="_blank" style="display:none;"><img src="../images/eyok21.jpg" /></a><a href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=78" target="_blank"><img src="../images/eyok20.jpg" /></a>
               <div class="blank0"></div>
             </div>
           </div>
@@ -153,7 +162,7 @@ $("#reception").slideUp("normal");
                 <li><strong><a >调查调查调查调查调查调查调查调查调查调查调查调查调查调查调查调查调查调查？</a></strong></li>
               </ul>
             </div>
-            <div class="questionsbottom"><a href="#"><img src="../images/eyok21.jpg" /></a><a href="#"><img src="../images/eyok24.jpg" /></a>
+            <div class="questionsbottom"><a href="#"><img src="../images/eyok21.jpg" /></a><a href="#" style="display:none;"><img src="../images/eyok24.jpg" /></a>
               <div class="blank0"></div>
             </div>
           </div>

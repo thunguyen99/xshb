@@ -4,9 +4,9 @@ checkBrowserWidth();
 //Load when the page is ready - Using jQuery to run events
 $(document).ready(function(){
 						   
-parseCode('thickbox-code/thickbox.js','ajaxJS');
-parseCode('thickbox-code/thickbox.css','ajaxCSS');
-parseCode('thickbox-code/thickbox-compressed.js','ajaxJSCompressed');
+//parseCode('thickbox-code/thickbox.js','ajaxJS');
+//parseCode('thickbox-code/thickbox.css','ajaxCSS');
+//parseCode('thickbox-code/thickbox-compressed.js','ajaxJSCompressed');
 				  		  
 $(window).resize(checkBrowserWidth);
 $('div.roundbox').corner('round 9px');

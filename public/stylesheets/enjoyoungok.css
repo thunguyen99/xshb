@@ -23,12 +23,12 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .loginbar span { display:block; float:right; margin-left:5px; }
 .loginbar a { margin:2px; }
 .input { border:1px solid #000; height:18px; }
-.oknav { width:1000px; height:34px; background: url(../images/eyok01.jpg) no-repeat; margin-top:1px; border-bottom:9px #cccbd0 solid; }
+.oknav { width:1000px; height:34px; background: #000 url(../images/nav_bg.jpg) repeat-x; margin-top:1px; border-bottom:9px #cccbd0 solid; }
 .current { width:83px; height:34px; background-color:#e70012; }
 .oknav_a1 { float:left; margin-right:20px; display:inline }
-.oknav_a1 a { float:left; width:83px; height:34px; line-height:34px; text-align:center; color:#FFF; margin-right:1px; }
-.oknav_a1 a:hover { float:left; width:83px; height:34px; line-height:34px; text-align:center; color:#FFF; margin-right:1px; background-color:#e70012; }
-.oknav_a2 { float:rihgt; width:300px; display:inline; height:34 }
+.oknav_a1 a { float:left; width:80px; height:34px; line-height:34px; text-align:center; color:#FFF; margin-right:1px; border-right:1px #fff solid; }
+.oknav_a1 a:hover { float:left; width:80px; height:34px; line-height:34px; text-align:center; color:#FFF; margin-right:1px; background-color:#e70012; }
+.oknav_a2 { float:right; width:300px; display:inline; height:34 }
 .oknav_a2 span { float:left; display:block; padding-top:5px; margin-left:5px; }
 .content { width:998px;border-left:1px solid #dadada; border-right:1px solid #dadada;}
 .content_left { width:682px;  float:left; }
@@ -153,3 +153,5 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .neiye_a5left p{ text-indent:24px;  color:#6d6d6d;  line-height:24px; }
 .a503content{height:210px; overflow:hidden;}
 .a503content_01{height:75px; overflow:hidden;}
+
+/*hide nav block temporarily*/

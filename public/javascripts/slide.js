@@ -9,5 +9,3 @@ $(document).ready(function(){
   });
   
 });
-
-//ÀÁÈËÍ¼¿â www.lanrentuku.com
