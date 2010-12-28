@@ -15,6 +15,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .img { border:0; margin:0px; padding:0px; }
 .hui { color:#696969; text-decoration:none; }
 .hui:hover { color:#696969; text-decoration: none; }
+.red { color:#FFF; text-decoration:none; background:#333; padding:2px; line-height:24px;}
 .white { color:#FFF; text-decoration:none; }
 .white:hover { color:#FFF; text-decoration:none; }
 .enjoyoungok { width: 1000px; margin:0 auto 0 auto; }
@@ -46,6 +47,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .span_imgbg { width:209px; height:106px; padding:3px; background:url(../images/eyok08.jpg) no-repeat; overflow:hidden; }
 .span_title { height:24px; line-height:24px; width:205px; font-weight:bolder; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; padding:0 5px 0 5px; }
 .span_content { width:205px; line-height:18px; color:#6d6d6d; padding:0 5px 0 5px; }
+.span_content p { text-indent:20px; }
 .link { margin:10px 0 15px 130px; }
 .sina { width:60px; height:12px; background:url(../images/eyok09.jpg) no-repeat 80px 0px; padding:40px 0 0 130px; float:left }
 .kaixin { width:60px; height:12px; background:url(../images/eyok10.jpg) no-repeat 80px 0px; padding:40px 0 0 130px; float:left }
