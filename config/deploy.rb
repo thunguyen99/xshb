@@ -78,7 +78,7 @@ namespace :deploy do
 
   desc "Generate database.yml and Create asset packages for production, minify and compress js and css files" 
   after "deploy:update_code", :roles => [:web] do
-    # database_yml
+    database_yml
     thin_yml
     app_config
   end
@@ -90,7 +90,7 @@ namespace :deploy do
     # run "#{shared_path}/script/relink.sh /usr/local/webservice/htdocs/assets #{release_path}/assets #{previous_release} #{release_name} assets"
     
     # backup_db
-    # migrate
+    migrate
   end
   
   # customized tasks
