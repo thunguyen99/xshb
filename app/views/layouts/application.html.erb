@@ -40,6 +40,10 @@ $("#reception").slideUp("normal");
         <%=render :partial => "shared/header"%>
     <!--头结束-->
 
+    <div id="flash">
+		<%= flash_message %>
+	</div>
+
     <!--内容-->
     <div class="content">
         <%= yield %>

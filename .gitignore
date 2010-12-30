@@ -1,2 +1,5 @@
+.loadpath
+.project
 db/*.sqlite3
 log
+config/database.yml

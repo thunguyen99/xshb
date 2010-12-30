@@ -1,0 +1,20 @@
+<div class="p_form">
+<h1>用户登录</h1>
+
+<div class="user_form">
+<% form_tag session_path do -%>
+<div><%= label_tag 'login','用户名' %>
+<%= text_field_tag 'login', @login %></div>
+
+<div><%= label_tag 'password','密码' %>
+<%= password_field_tag 'password', nil %></div>
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+
+<div><%= submit_tag '我要登录' %></div>
+<% end -%>
+</div>
+</div>

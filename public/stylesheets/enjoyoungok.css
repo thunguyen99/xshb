@@ -155,3 +155,49 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .a503content_01{height:75px; overflow:hidden;}
 
 /*hide nav block temporarily*/
+.p_form {width:40%;margin:auto;}
+.p_form h1{padding-bottom:10px;}
+.p_form div{padding:5px;}
+.user_form {text-align:center;}
+.p_form input{}
+.p_form label{width:100px;float:left;}
+
+#flash{font-weight:bold;text-align:center;}
+#notice {border:2px solid #A7CC31;background-color:#FFFBE2;padding:1em;color:#006600;}
+#error {border:2px solid red;background-color:#FFEBE8;padding:1em;color:red;}
+
+/* error_messages */
+.errorExplanation {background-color:#FFCCCC;border:1px solid #FF6666;margin:2px 0;}
+.errorExplanation h2 {
+padding: 2px 5px;
+color: #333;
+font-size: 11px;
+margin: 0;
+letter-spacing: 0;
+font-family: Verdana;
+background-color: #f66;
+}
+
+.errorExplanation ul {
+margin: 0;
+padding: 0 2px 4px 25px;
+list-style: disc;
+}
+
+.errorExplanation p {
+font-size: 11px;
+padding: 2px 5px;
+font-family: Verdana;
+margin: 0;
+}
+
+.errorExplanation ul li {
+font: bold 11px verdana;
+letter-spacing: -1px;
+margin: 0;
+padding: 0;
+background-color: transparent;
+}
+
+.fieldWithErrors input{border:1px solid #FF6666;}
+/* error_messages */
