@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230143311) do
+ActiveRecord::Schema.define(:version => 20101230163511) do
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
@@ -24,5 +24,16 @@ ActiveRecord::Schema.define(:version => 20101230143311) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "xsvips", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "card_number"
+    t.string   "card_password"
+    t.string   "receiver"
+    t.string   "mobile"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

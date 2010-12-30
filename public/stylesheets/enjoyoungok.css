@@ -153,6 +153,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .neiye_a5left p{ text-indent:24px;  color:#6d6d6d;  line-height:24px; }
 .a503content{height:210px; overflow:hidden;}
 .a503content_01{height:75px; overflow:hidden;}
+.xs_vip #xsvip_submit {background:url(../images/xsok/xs14.jpg);width:121px;height:43px;border:0;cursor:pointer;}
 
 /*hide nav block temporarily*/
 .p_form {width:40%;margin:auto;}
@@ -163,8 +164,8 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .p_form label{width:100px;float:left;}
 
 #flash{font-weight:bold;text-align:center;}
-#notice {border:2px solid #A7CC31;background-color:#FFFBE2;padding:1em;color:#006600;}
-#error {border:2px solid red;background-color:#FFEBE8;padding:1em;color:red;}
+#notice {border:3px solid #A7CC31;background-color:#FFFBE2;padding:1em;color:#006600;}
+#error {border:3px solid red;background-color:#FFEBE8;padding:1em;color:red;}
 
 /* error_messages */
 .errorExplanation {background-color:#FFCCCC;border:1px solid #FF6666;margin:2px 0;}

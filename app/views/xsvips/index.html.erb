@@ -1,0 +1,98 @@
+<% content_for :header do %>
+	<link href="/stylesheets/ranking.css" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/xsok.css" rel="stylesheet" type="text/css" />
+<% end %>
+
+<!--跑马灯-->
+      <div id="reception2j">
+        <div class="news2j">
+          <marquee scrollamount="3" onmouseover= "this.stop(); "   onmouseout= "this.start(); ">
+          <a href="#">最新消息最新消息最新消息最新消息最新消息最新消息最新消息最新消息</a>
+          </marquee>
+        </div>
+        <div id="closeb" > <a href="javascript:;" onclick="closereception2j();" title="关闭"><img src="/images/eyok05.jpg" /></a> </div>
+      </div>
+      <!--跑马灯结束-->
+
+
+<%form_for @xsvip, :url => xsvips_url,:html=>{:name=>"xsvip_form"} do |f|%>
+      <!--vip-->
+      <div class="xs_vip">
+      <div class="xsvip01"><img src="/images/xsok/xs10.jpg" /></div>
+      <div class="xsvip02">
+      <span><img src="/images/xsok/xs11.jpg" /></span>
+      <span class="vipspan">
+
+
+      <table width="85%" border="0" cellspacing="0" cellpadding="3" style=" line-height:24px; margin:0px 0 0 40px; text-align:left; ">
+	  <tr>
+	    <td width="20%">卡号：</td>
+	    <td width="59%"><%=f.text_field :card_number%></td>
+	    <td width="21%">*必填</td>
+	  </tr>
+	  <tr>
+	    <td>密码：</td>
+	    <td><%=f.text_field :card_password%></td>
+	    <td>*必填</td>
+	  </tr>
+	  <tr>
+	    <td>收件人姓名：</td>
+	    <td><%=f.text_field :receiver%></td>
+	    <td>*必填</td>
+	  </tr>
+	  <tr>
+	    <td>手机号：</td>
+	    <td><%=f.text_field :mobile%></td>
+	    <td>*必填</td>
+	  </tr>
+	  <tr>
+	    <td>详细地址：</td>
+	    <td rowspan="2"><%=f.text_area :address,:cols=>24,:rows=>2,:style=>"height:36px;"%></td>
+	    <td>*必填</td>
+	  </tr>
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	  </tr>
+	</table>
+	</span>
+      <span class="vipspan01">
+      <div class="vipspan01l">此卡解释权归星尚传媒有限公司</div>
+      <div class="vipspan01r"><input type="button" id="xsvip_submit" onclick="check();" value=""></div>
+      <div class="blank0"></div>
+      </span>
+      </div>
+      <div class="blank20"></div>
+    </div>
+      <!--VIP结束-->
+<% end %>
+
+<script type="text/javascript">
+function check(){
+	if($('#xsvip_card_number').val() == ''){
+		alert("请输入您的卡号!");
+		return false;
+	}
+	if($('#xsvip_card_password').val() == ''){
+		alert("请输入您的密码！");
+		return false;
+	}
+
+	if($('#xsvip_receiver').val() == ''){
+		alert("请输入您的收件人姓名！");
+		return false;
+	}
+
+	if($('#xsvip_mobile').val() == ''){
+		alert("请输入您的手机号！");
+		return false;
+	}
+
+	if($('#xsvip_address').val() == ''){
+		alert("请输入您的详细地址！");
+		return false;
+	}
+
+	document.xsvip_form.submit();
+}
+</script>
