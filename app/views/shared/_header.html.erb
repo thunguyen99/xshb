@@ -1,9 +1,9 @@
 <div class="eyoktop">
     <!--登录条-->
     <div class="loginbar">
-    <%if current_user%>
+    <%if logged_in?%>
     	<span style="margin-left:10px;">
-	    	<strong>您好，<%=current_user.name%>|</a><a href="/logout">注销</a></strong>
+	    	<strong>您好，<%=current_user.name%> | <a href="/logout">注销</a></strong>
 	    </span>
     <%else%>
 	    <% form_tag session_path,:name=>"login_form" do -%>
