@@ -156,6 +156,11 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .xs_vip #xsvip_submit {background:url(../images/xsok/xs14.jpg);width:121px;height:43px;border:0;cursor:pointer;}
 
 /*hide nav block temporarily*/
+.loginbar {display:none;}
+#reception,#reception2j {display:none;}
+
+
+
 .p_form {width:40%;margin:auto;}
 .p_form h1{padding-bottom:10px;}
 .p_form div{padding:5px;}
