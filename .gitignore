@@ -6,3 +6,5 @@ db/schema.rb
 db/*.sqlite3
 *.orig
 .DS_Store
+.loadpath
+.project
