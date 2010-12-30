@@ -155,3 +155,5 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .a503content_01{height:75px; overflow:hidden;}
 
 /*hide nav block temporarily*/
+.loginbar {display:none;}
+#reception,#reception2j {display:none;}
