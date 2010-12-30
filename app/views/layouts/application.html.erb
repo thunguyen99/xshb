@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>星尚画报</title>
+<link href="/stylesheets/enjoyoungok.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/thickbox.css" rel="stylesheet" type="text/css" />
+<script src="/javascripts/jquery.min.js"  type="text/javascript"></script>
+<script src="/javascripts/jquery-1.4a2.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.KinSlideshow-1.2.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/slide.js" type="text/javascript"></script>
+<script src="/javascripts/thickbox-compressed.js" type="text/javascript"></script>
+<script src="/javascripts/global.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+        $("#KinSlideshow").KinSlideshow({
+                moveStyle:"right",
+                titleBar:{titleBar_height:35,titleBar_bgColor:"#FFFFFF",titleBar_alpha:0.5},
+                titleFont:{TitleFont_size:14,TitleFont_color:"#000000",TitleFont_weight:"bolder"},
+                btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#000000",btn_fontColor:"#000000",
+                     btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#ffffff",
+                     btn_borderHoverColor:"#000000",btn_borderWidth:1}
+        });
+
+        //after slideshow initialize, focus images are moved into new container
+        //need to re-thickboxize them
+        tb_init("#KSS_content a.thickbox, #KSS_contentClone a.thickbox");
+    })
+
+</script>
+<script type="text/javascript">
+function closereception(){
+$("#reception").slideUp("normal");
+}
+</script>
+</head>
+<body>
+<div class="enjoyoungok">
+    <!--头-->
+        <%=render :partial => "shared/header"%>
+    <!--头结束-->
+
+    <!--内容-->
+    <div class="content">
+        <%= yield %>
+    </div>
+    <!--内容结束-->
+
+    <!--底部-->
+        <%= render :partial => 'shared/footer' %>
+    <!--底部结束-->
+</div>
+</body>
+</html>
