@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :xsvips
 
+  map.resources :orders,:collection => {:notify => :get,:done => :get,:show_order => :get}
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
