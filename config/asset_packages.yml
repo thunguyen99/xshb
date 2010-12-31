@@ -1,0 +1,18 @@
+---
+javascripts:
+- base:
+  - jquery-1.4a2.min
+  - jquery.KinSlideshow-1.2.1.min
+  - slide
+  - thickbox-compressed
+  - global
+  - application
+- signup:
+  - jquery-1.4a2.min
+  - jquery.validate
+  - jquery.metadata
+  - messages_cn
+stylesheets:
+- base:
+  - enjoyoungok
+  - thickbox
