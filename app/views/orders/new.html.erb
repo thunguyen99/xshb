@@ -1,0 +1,197 @@
+<%form_for(@order,:html=>{:onSubmit=>"return check();"}) do |f|%>
+<div class="FormWrap checkoutbase">
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tbody>
+            <tr>
+                <td width="100" style="vertical-align: middle; white-space: nowrap;">
+                    <h3>收货信息确认</h3>
+                </td>
+                <td>
+                    <div id="receiver" class="division receiver">
+                        <div id="checkout-recaddr">
+                            <table cellspacing="0" cellpadding="0" border="0" class="liststyle data" width="100%">
+                                <col class="span-3">
+                                <col class="span-9">
+                                <col class="span-auto">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <em style="color: red;">*</em>收货地址：
+                                        </td>
+                                        <td>
+                                            <%=f.text_field :address%>
+                                        </td>
+                                        <td> 邮编： <%=f.text_field :zip_code,:class=>"span-2"%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <em style="color: red;">*</em>收货人姓名：
+                                        </td>
+                                        <td colspan="2">
+                                            <%=f.text_field :receiver_name%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <em style="color: red;">*</em>手机：
+                                        </td>
+                                        <td colspan="2">
+                                            <%=f.text_field :mobile%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <em style="color: rgb(204, 204, 204);">*</em>固定电话：
+                                        </td>
+                                        <td colspan="2">
+                                            <%=f.text_field :phone%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <em style="color: rgb(204, 204, 204);">*</em>订单附言：
+                                        </td>
+                                        <td colspan="2">
+                                            <%=f.text_field :memo,:size=>100%>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
+
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tbody>
+            <tr>
+                <td width="100" style="vertical-align: middle; white-space: nowrap;">
+                    <h3>支付方式确认</h3>
+                </td>
+                <td>
+                    <div class="division">
+                        <div style="padding: 5px;" id="_payment_currency">
+                            货币类型：<select required="true" class="x-input-select inputstyle inputstyle" name="payment[currency]" id="payment-cur">
+                                <option value="CNY" selected="selected">人民币</option>
+                            </select>
+                        </div>
+                        <div id="payment">
+                            <table cellspacing="0" cellpadding="0" width="100%" id="_normal_payment" class="liststyle data">
+                                <col class="span-5 ColColorGray">
+                                <col class="span-auto">
+                                <tbody>
+                                    <tr>
+                                        <th style="text-align: left;">
+                                            <label><input type="radio" checked=checked name="payment[payment]" class="x-payMethod" style="cursor: pointer;">支付宝</label>
+                                        </th>
+                                        <td>
+                                            <div class="uarea">&nbsp;</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<%oli=OrderLineItem.ordered(false).in_user(current_user)%>
+<%@olis = oli.all(:order=>"created_at DESC")%>
+<%total_price = oli.all(:select=>"sum(total_price) as tp").first.tp.to_i%>
+<div id="cartItems" class="FormWrap">
+    <h3>购买的商品:</h3>
+    <div class="division" id="goodsbody">
+        <table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+            <col class="span-2 ">
+            <col class="span-auto">
+            <col class="span-2">
+            <col class="span-2">
+            <col class="span-1">
+            <col class="span-2 ColColorOrange">
+            <thead>
+                <tr>
+                    <th>图片</th>
+                    <th>商品名称</th>
+                    <th>销售价格</th>
+                    <th>优惠价格</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%@olis.each do |oli|%>
+                <tr>
+                    <td>
+                        <div style="width: 50px; height: 50px;" class="cart-product-img">
+                            <img height="50" width="50" src="/images/newspaper_thumb.jpg">
+                        </div>
+                    </td>
+                    <td style="text-align: left;">
+                        <a><%=oli.product.name%> (<%=oli.property.name%>)</a>
+                    </td>
+                    <td class="mktprice1">￥<%=oli.property.market_price%></td>
+                    <td>￥<%=oli.property.price%></td>
+                    <td><%=oli.quantity%></td>
+                    <td class="itemTotal fontcolorRed">￥<%=oli.total_price%></td>
+                </tr>
+                <%end%>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="cartTotal">
+        <table cellspacing="0" cellpadding="3" width="100%" class="liststyle_data">
+            <col class="span-auto">
+            <col class="span-2">
+            <tbody>
+                <tr>
+                    <th align="right">
+                        <span style="font-size: 14px; color: rgb(0, 0, 0);">商品总额：</span>
+                    </th>
+                    <td>
+                        <span style="padding-right: 15px;" class="totalprice price1">￥<%=total_price%></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="CartBtn clearfix">
+        <div class="span-auto" style="float:left;">
+            <input type="button" value="返回购物车" onclick="window.location='/products';" class="actbtn btn-return-checkout">
+        </div>
+        <div class="span-auto last" style="float:right;">
+            <input type="submit" value="确认无误，下订单" class="actbtn btn-confirm">
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>
+<%end%>
+
+<script type="text/javascript" charset="utf-8">
+    function check(){
+        if($("#order_address").val() == ""){
+            alert("请填写收货地址");
+            return false;
+        }
+        if($("#order_receiver_name").val() == ""){
+            alert("请填写收货人姓名");
+            return false;
+        }
+        if($("#order_mobile").val() == ""){
+            alert("请填写手机");
+            return false;
+        }
+    }
+</script>

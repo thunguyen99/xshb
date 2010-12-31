@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @order_line_item = OrderLineItem.new
+    @product = Product.first
   end
 
 end

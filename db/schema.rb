@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101231171415) do
+ActiveRecord::Schema.define(:version => 20101231222935) do
 
   create_table "order_line_items", :force => true do |t|
     t.integer  "order_id"
@@ -25,12 +25,20 @@ ActiveRecord::Schema.define(:version => 20101231171415) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "status",                                   :default => 0
-    t.decimal  "amount",     :precision => 8, :scale => 2, :default => 0.0
+    t.integer  "status",                                      :default => 0
+    t.decimal  "amount",        :precision => 8, :scale => 2, :default => 0.0
     t.text     "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "oid",                                                          :null => false
+    t.string   "address"
+    t.string   "zip_code"
+    t.string   "receiver_name"
+    t.string   "mobile"
+    t.string   "phone"
   end
+
+  add_index "orders", ["oid"], :name => "index_orders_on_oid", :unique => true
 
   create_table "products", :force => true do |t|
     t.string   "name"

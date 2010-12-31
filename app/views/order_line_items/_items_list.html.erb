@@ -1,0 +1,102 @@
+<script type="text/javascript" charset="utf-8">
+<% if @error_message%>
+alert("<%=@error_message%>");
+<% else %>
+$("#order_line_item_property_id").attr("value","");
+$("#order_line_item_quantity").attr("value",1);
+<% end %>
+</script>
+
+<%oli=OrderLineItem.ordered(false).in_user(current_user)%>
+<%@olis = oli.all(:order=>"created_at DESC")%>
+<%total_price = oli.all(:select=>"sum(total_price) as tp").first.tp.to_i%>
+<%unless @olis.empty?%>
+
+<div id="cart-items" class="section">
+    <div id="cartItems" class="FormWrap">
+        <h3>已放入购物车的商品:</h3> 请在此确认你要购买的商品
+        <div class="division" id="goodsbody">
+            <table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+                <col class="span-2 ">
+                <col class="span-auto">
+                <col class="span-2">
+                <col class="span-2">
+                <col class="span-1">
+                <col class="span-2 ColColorOrange">
+                <col class="span-2">
+                <thead>
+                    <tr>
+                        <th>图片</th>
+                        <th>商品名称</th>
+                        <th>销售价格</th>
+                        <th>优惠价格</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                        <th>删除</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%@olis.each do |oli|%>
+                    <tr>
+                        <td>
+                            <div style="width: 50px; height: 50px;" class="cart-product-img">
+                                <img height="50" width="50" src="/images/newspaper_thumb.jpg">
+                            </div>
+                        </td>
+                        <td style="text-align: left;">
+                            <a><%=oli.product.name%> (<%=oli.property.name%>)</a>
+                        </td>
+                        <td class="mktprice1">￥<%=oli.property.market_price%></td>
+                        <td>￥<%=oli.property.price%></td>
+                        <td>
+                            <div class="Numinput">
+                                <input type="text" name="" size="3" onchange="quantity_update(<%=oli.id%>);" value="<%=oli.quantity%>" id="quantity_<%=oli.id%>">
+                                <script type="text/javascript" charset="utf-8">
+                                function quantity_update(id){
+                                    $("#cart_list").load("/order_line_items/"+id+"/update_quantity?quantity="+$("#quantity_"+id).val(),{'authenticity_token':"<%=form_authenticity_token%>"})
+                                }
+                                </script>
+                            </div>
+                        </td>
+                        <td class="itemTotal fontcolorRed">￥<%=oli.total_price%></td>
+                        <td>
+                            <%= link_to_remote '<img src="/images/false.png" />',
+                            :url => {:controller => :order_line_items, :action => :destroy, :id => oli.id},
+                            :method => :delete,
+                            :update => "cart_list"%>
+                        </td>
+                    </tr>
+                    <%end%>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="cartTotal">
+            <table cellspacing="0" cellpadding="3" width="100%" class="liststyle_data">
+                <col class="span-auto">
+                <col class="span-2">
+                <tbody>
+                    <tr>
+                        <th align="right">
+                            <span style="font-size: 14px; color: rgb(0, 0, 0);">商品总额：</span>
+                        </th>
+                        <td>
+                            <span style="padding-right: 15px;" class="totalprice price1">￥<%=total_price%></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <form action="/orders/new">
+        <div style="margin-bottom: 5px;" class="CartBtn">
+            <div class="span-auto" style="float:right">
+                <input type="submit" value="下单结算»" class="actbtn btn-next">
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </form>
+</div>
+<%end%>

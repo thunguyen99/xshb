@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
 
   has_many :xsvips
+  has_many :orders
+  has_many :order_line_items
 
   validates_presence_of     :login, :name, :email
   validates_uniqueness_of   :login, :email
