@@ -1,4 +1,5 @@
-<!-- <% payment_service_for 'id-123', ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
+<%if false%>
+<% payment_service_for 'id-123', ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
                             :service => :alipay,
                             :html => { :id => 'payment-form', :method => :get } do |service| %>
   <% service.total_fee 0.01 %>
@@ -14,7 +15,8 @@
   <% service.subject '星尚画报' %>
   <% service.sign %>
 <% end %>
-<%= button_to_function "Submit", "document.getElementById('payment-form').submit();" %> -->
+<%= button_to_function "Submit", "document.getElementById('payment-form').submit();" %>
+<%end%>
 
 
 <table width="100%" style="padding:15px;" class="GoodsInfoWrap">
@@ -30,7 +32,7 @@
                 </div>
             </td>
             <td width="60%" valign="top">
-                <form>
+                <%remote_form_for @order_line_item,:update=>"cart_list" do |f|%>
                     <h2 class="goodsname">超值订阅《星尚画报》周刊</h2>
                     <p class="brief">即日起至2010年12月31日，在线订阅《星尚画报》享超值优惠！全年订阅，免费赠阅4期；季度订购，免费赠阅2期
                         随机抽取100位幸运读者可获：有机培植25g日+夜双效柔润修护霜（50份），有机培植40g眼部凉菜紧致精华（50份）。
@@ -38,7 +40,8 @@
                         <ul class="goodsprops clearfix">
                             <li><span>计量单位：</span>年度-季度</li>
                         </ul>
-                        <ul class="goods-price list">
+
+                        <ul class="goods-price list" id="p_">
                             <li>
                                 <span>市场价：</span>
                                 <i class="mktprice1"> ￥60.00-￥243.00 </i>
@@ -48,6 +51,20 @@
                                 <span class="price1"> ￥60.00-￥223.00 </span>
                             </li>
                         </ul>
+
+                        <%Property.all.each do |p|%>
+                        <ul class="goods-price list" style="display:none;" id="p_<%=p.id%>">
+                            <li>
+                                <span>市场价：</span>
+                                <i class="mktprice1"> ￥<%=p.market_price%> </i>
+                            </li>
+                            <li>
+                                <span>销售价：</span>
+                                <span class="price1"> ￥<%=p.price%> </span>
+                            </li>
+                        </ul>
+                        <%end%>
+
                         <div class="hightline ">
                             <div class="hightbox">
                                 <div class="buyinfo">
@@ -59,14 +76,14 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding:0 20px;">
-                                                    <select>
-                                                        <option value="">
-                                                            请选择投递方式
-                                                        </option>
-                                                        <%Property.all.each do |p|%>
+                                                        <select id="property">
+                                                            <option value="">
+                                                                请选择投递方式
+                                                            </option>
+                                                            <%Property.all.each do |p|%>
                                                             <option value="<%=p.id%>"><%=p.name%></option>
-                                                        <%end%>
-                                                    </select>
+                                                            <%end%>
+                                                        </select>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -92,13 +109,24 @@
                                 </div>
                                 <div style="visibility: visible;height:40px" class="btnBar">
                                     <div class="floatLeft">
-                                         <input type="submit" value="" class="btn-buy">
+                                        <input type="submit" value="" class="btn-buy">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    <%end%>
                 </td>
             </tr>
         </tbody>
     </table>
+
+<script type="text/javascript" charset="utf-8">
+    $("#property").change(function(){
+        $(".goods-price").hide();
+        $("#p_"+this.value).show();
+    })
+</script>
+
+
+<div id="cart_list">
+</div>
