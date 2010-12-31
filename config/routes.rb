@@ -5,12 +5,16 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.check_un '/users/check_un', :controller => "users", :action => "check_un"
   map.check_email '/users/check_email', :controller => "users", :action => "check_email"
-  
+
   map.resources :users
 
   map.resource :session
 
   map.resources :xsvips
+
+  map.resources :products
+
+  map.resources :order_line_items
 
   map.resources :orders,:collection => {:notify => :get,:done => :get,:show_order => :get}
 

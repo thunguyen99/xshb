@@ -218,3 +218,23 @@ background-color: transparent;
 
 .fieldWithErrors input{border:1px solid #FF6666;}
 /* error_messages */
+
+
+/* goods */
+.GoodsInfoWrap .goodsprops {border-bottom:1px dotted #A6A6A6;border-top:1px dotted #A6A6A6;margin:0 0 5px;padding:10px 0;}
+.GoodsInfoWrap .brief{color:#336699; padding:5px;}
+.mktprice1 {color:#999999;font-size:11px;text-decoration:line-through;}
+.price1 {color:#FF6600;font-size:16px;font-weight:bold;}
+.GoodsInfoWrap ul.list{margin:10px 0;}
+.GoodsInfoWrap ul.list li{background:url("/images/ra.gif") no-repeat scroll 0 8px transparent;border-bottom:1px solid #EFEFEF;color:#666666;display:block;line-height:23px;padding-left:15px;}
+.hightline {background:none repeat scroll 0 0 #FFFEE6;border:1px solid #E7DBB1;margin-bottom:5px;}
+.hightbox {border:2px solid #FFFFFF;padding:5px;}
+.buyinfo {border-bottom:1px solid #FAEAC7;padding:5px 0 10px;}
+.GoodsInfoWrap .btnBar {border-top:1px solid #FFFFFF;margin:0 3px 3px;padding:2px;}
+.btn-buy {background:url("/images/btn-buy.gif") repeat scroll 0 0 transparent;float:left;width:120px;height:37px;cursor:pointer;}
+.Numinput {height:20px;padding:0 20px;position:relative;}
+.Numinput .numadjust {background-image:url("/images/numadjust.gif");background-repeat:no-repeat;cursor:pointer;height:9px;overflow:hidden;position:absolute;right:1px;width:18px;}
+.Numinput .numadjust.increase {background-position:0 0;top:0;}
+.Numinput .numadjust.decrease {background-position:0 -10px;bottom:0;}
+
+/* end goods */
