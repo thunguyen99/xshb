@@ -128,24 +128,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .neiye_a3right span { display:block; margin-bottom:8px; padding:0 5px 0 5px; }
 .neiye_a3right p { text-indent:24px; color:#6d6d6d; line-height:24px; }
 .neiye_a4 { height:517px; width:998px; border-bottom:1px solid #dadada; }
-.neiye_a4top { height:278px; width:968px; border-bottom:1px solid #dadada; padding:15px; }
-.neiye_a4top span { display:block; padding:0 5px 0 5px; }
-.neiye_a4top p { text-indent:24px; color:#6d6d6d; line-height:24px; }
-.a4titlebig { text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:28px; font-weight:bold; height:28px; line-height:28px; }
-.a403content { height:190px; overflow:hidden; }
-.neiye_a4bottom { height:208px; width:998px; }
-.neiye_a4bottom_01 { width:301px; height:178px; border-right:1px solid #dadada; float:left; padding:15px; }
-.neiye_a4bottom_01 span { display:block; margin-bottom:8px; padding:0 5px 0 5px; }
-.a4title { width:160px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:20px; font-weight:bold; height:20px; line-height:20px; }
-.a401content { height:120px; overflow:hidden; }
-.neiye_a4bottom p { text-indent:24px; color:#6d6d6d; line-height:24px; }
-.a4title_01 { width:285px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:20px; font-weight:bold; height:20px; line-height:20px; }
-.neiye_a5left { width:468px; height:278px; float:left; border-right:1px solid #dadada; border-top:1px solid #dadada; padding:15px; }
-.a5titlebig { text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:28px; font-weight:bold; height:28px; line-height:28px; }
-.neiye_a5left span { display:block; margin-bottom:8px; padding:0 5px 0 5px; }
-.neiye_a5left p { text-indent:24px; color:#6d6d6d; line-height:24px; }
-.a503content { height:210px; overflow:hidden; }
-.a503content_01 { height:75px; overflow:hidden; }
+
 /*hide nav block temporarily*/
 
 #imageFlow { position: absolute; width: 100%; height: 80%; left: 0%; top: 10%; background: #000; }
@@ -162,3 +145,77 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 #imageFlow .arrow-right { position: absolute; right: 0px; }
 #imageFlow .bar { position: absolute; height: 16px; left: 25px; }
 .appreciate01 { width:982px; height:645px; position:relative; overflow:hidden; margin:8px; background:#000 url(../images/eyok27.jpg) no-repeat;}
+
+.neiye_a4top{ height:278px; width:968px; border-bottom:1px solid #dadada; padding:15px; }
+.neiye_a4top span{ display:block;  padding:0 5px 0 5px;}
+.neiye_a4top p{ text-indent:24px;  color:#6d6d6d;  line-height:24px; }
+.a4titlebig{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:28px; font-weight:bold; height:28px; line-height:28px;}
+.a403content{height:190px; overflow:hidden;}
+.neiye_a4bottom{ height:208px; width:998px;  }
+.neiye_a4bottom_01{ width:301px; height:178px; border-right:1px solid #dadada; float:left; padding:15px;}
+.neiye_a4bottom_01 span{ display:block; margin-bottom:8px; padding:0 5px 0 5px;}
+.a4title{ width:160px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:20px; font-weight:bold; height:20px; line-height:20px;}
+.a401content{height:120px; overflow:hidden;}
+.neiye_a4bottom p{ text-indent:24px;  color:#6d6d6d;  line-height:24px; }
+.a4title_01{ width:285px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:20px; font-weight:bold; height:20px; line-height:20px;}
+
+.neiye_a5left{  width:468px; height:278px; float:left; border-right:1px solid #dadada; border-top:1px solid #dadada; padding:15px;}
+.a5titlebig{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color:#000; font-size:28px; font-weight:bold; height:28px; line-height:28px;}
+.neiye_a5left span { display:block; margin-bottom:8px; padding:0 5px 0 5px;}
+.neiye_a5left p{ text-indent:24px;  color:#6d6d6d;  line-height:24px; }
+.a503content{height:210px; overflow:hidden;}
+.a503content_01{height:75px; overflow:hidden;}
+.xs_vip #xsvip_submit {background:url(../images/xsok/xs14.jpg);width:121px;height:43px;border:0;cursor:pointer;}
+
+/*hide nav block temporarily*/
+/*.loginbar {display:none;}*/
+#reception,#reception2j {display:none;}
+
+
+
+.p_form {width:40%;margin:auto;}
+.p_form h1{padding-bottom:10px;}
+.p_form div{padding:5px;}
+.user_form {text-align:center;}
+.p_form input{}
+.p_form label{width:100px;float:left;}
+
+#flash{font-weight:bold;text-align:center;}
+#notice {border:3px solid #A7CC31;background-color:#FFFBE2;padding:1em;color:#006600;}
+#error {border:3px solid red;background-color:#FFEBE8;padding:1em;color:red;}
+
+/* error_messages */
+.errorExplanation {background-color:#FFCCCC;border:1px solid #FF6666;margin:2px 0;}
+.errorExplanation h2 {
+padding: 2px 5px;
+color: #333;
+font-size: 11px;
+margin: 0;
+letter-spacing: 0;
+font-family: Verdana;
+background-color: #f66;
+}
+
+.errorExplanation ul {
+margin: 0;
+padding: 0 2px 4px 25px;
+list-style: disc;
+}
+
+.errorExplanation p {
+font-size: 11px;
+padding: 2px 5px;
+font-family: Verdana;
+margin: 0;
+}
+
+.errorExplanation ul li {
+font: bold 11px verdana;
+letter-spacing: -1px;
+margin: 0;
+padding: 0;
+background-color: transparent;
+}
+
+.fieldWithErrors input{border:1px solid #FF6666;}
+/* error_messages */

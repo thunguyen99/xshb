@@ -37,7 +37,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .vipspan{ width:590px; height:188px; background:url(../images/xsok/xs12.jpg) no-repeat; font-size:12px; font-weight:bold; color:#FFF; margin:0px; padding:0px;}
 .vipspan01{ width:590px; height:119px; background:url(../images/xsok/xs13.jpg) no-repeat;}
 .vipspan01l{ margin:0 0 0 124px; float:left; font-size:14px; color:#FFF; font-weight:bold; line-height:28px; background-color:#000; padding:0 5px 0 5px; display:inline;}
-.vipspan01r{ margin:10px 0 0 90px; float:left;}
+.vipspan01r{ padding:10px 0 0 90px; float:left;}
 
 /*分页*/
 DIV.yellow { padding:7px 7px 7px 7px; text-align:left; }

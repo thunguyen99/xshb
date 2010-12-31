@@ -1,2 +1,10 @@
+nbproject
+log/*.log
+tmp/**/*
+config/database.yml
+db/schema.rb
 db/*.sqlite3
-log
+*.orig
+.DS_Store
+.loadpath
+.project

@@ -7,6 +7,17 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+
+  # config.gem "activemerchant", :lib => "active_merchant"
+  # config.gem "activemerchant_patch_for_china", :lib => false
+  #
+  # require 'active_merchant'
+  # require 'active_merchant/billing/integrations/action_view_helper'
+  #
+  # ActionView::Base.send(:include, ActiveMerchant::Billing::Integrations::ActionViewHelper)
+
+  config.plugins = [:all, :active_merchant, :activemerchant_patch_for_china]
+
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -33,9 +44,14 @@ Rails::Initializer.run do |config|
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
-  config.time_zone = 'UTC'
+#  config.time_zone = 'UTC'
+  config.i18n.default_locale = 'zh-CN'
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+ActiveMerchant::Billing::Integrations::Alipay::KEY = "n1v7mcvie3f89atykwwzdh04kgbyvywa"
+ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT = '2088201275658479'
+ActiveMerchant::Billing::Integrations::Alipay::EMAIL = 'jiacha.hua@enjoyoung.cn'

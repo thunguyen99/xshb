@@ -479,3 +479,7 @@ jQuery.fx.ScrollTo = function (e, o)
 	z.scroll = function (t, l){window.scrollTo(l, t)};
 	z.timer=setInterval(function(){z.step();},13);
 };
+
+function closereception(){
+$("#reception").slideUp("normal");
+}
