@@ -1,0 +1,127 @@
+<%if false%>
+<% payment_service_for 'id-123', ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
+                            :service => :alipay,
+                            :html => { :id => 'payment-form', :method => :get } do |service| %>
+  <% service.total_fee 0.01 %>
+  <% service.seller :id => ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT %>
+  <%# service.seller :email => ActiveMerchant::Billing::Integrations::Alipay::EMAIL %>
+  <% service.notify_url url_for(:only_path => false, :controller=>'orders', :action => 'notify') %>
+  <% service.return_url url_for(:only_path => false, :controller=>'orders', :action => 'done') %>
+  <% service.show_url url_for(:only_path => false, :controller=>'orders', :action => 'show_order') %>
+  <% service.body '星尚画报订阅' %>
+  <% service.charset "utf-8" %>
+  <% service.service ActiveMerchant::Billing::Integrations::Alipay::Helper::CREATE_DIRECT_PAY_BY_USER %>
+  <% service.payment_type 1 %>
+  <% service.subject '星尚画报' %>
+  <% service.sign %>
+<% end %>
+<%= button_to_function "Submit", "document.getElementById('payment-form').submit();" %>
+<%end%>
+
+
+<table width="100%" style="padding:15px;" class="GoodsInfoWrap">
+    <tbody>
+        <tr>
+            <td align="center" valign="top">
+                <div class="goodspic">
+                    <div style="width: 300px; height: 300px;" class="goods-detail-pic">
+                        <a style="width: 300px; height: 300px; display: table-cell; vertical-align: middle;">
+                            <img alt="超值订阅《星尚画报》周刊" src="/images/newspaper.jpg">
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td width="60%" valign="top">
+                <%remote_form_for @order_line_item,:update=>"cart_list" do |f|%>
+                    <%=f.hidden_field :product_id,:value=>@product.id%>
+                    <h2 class="goodsname">超值订阅《星尚画报》周刊</h2>
+                    <p class="brief">即日起至2010年12月31日，在线订阅《星尚画报》享超值优惠！全年订阅，免费赠阅4期；季度订购，免费赠阅2期
+                        随机抽取100位幸运读者可获：有机培植25g日+夜双效柔润修护霜（50份），有机培植40g眼部凉菜紧致精华（50份）。
+                        获奖名单将于2011年1月1日之后公布，请认真填写联络电话，以便我们与您联系具体领奖方式。</p>
+                        <ul class="goodsprops clearfix">
+                            <li><span>计量单位：</span>年度-季度</li>
+                        </ul>
+
+                        <ul class="goods-price list" id="p_">
+                            <li>
+                                <span>市场价：</span>
+                                <i class="mktprice1"> ￥60.00-￥243.00 </i>
+                            </li>
+                            <li>
+                                <span>销售价：</span>
+                                <span class="price1"> ￥60.00-￥223.00 </span>
+                            </li>
+                        </ul>
+
+                        <%Property.all.each do |p|%>
+                        <ul class="goods-price list" style="display:none;" id="p_<%=p.id%>">
+                            <li>
+                                <span>市场价：</span>
+                                <i class="mktprice1"> ￥<%=p.market_price%> </i>
+                            </li>
+                            <li>
+                                <span>销售价：</span>
+                                <span class="price1"> ￥<%=p.price%> </span>
+                            </li>
+                        </ul>
+                        <%end%>
+
+                        <div class="hightline ">
+                            <div class="hightbox">
+                                <div class="buyinfo">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>投递方式：</span>
+                                                </td>
+                                                <td>
+                                                    <div style="padding:0 20px;">
+                                                        <%=f.select :property_id , Property.all.collect {|p| [p.name,p.id]},:include_blank=>"请选择投递方式"%>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br />
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>购买数量：</span>
+                                                </td>
+                                                <td>
+                                                    <div class="Numinput">
+                                                        <%=f.text_field :quantity,:size=>3,:value=>1 %>
+                                                        <!-- <span class="numadjust increase "></span>
+                                                        <span class="numadjust decrease "></span> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="visibility: visible;height:40px" class="btnBar">
+                                    <div class="floatLeft">
+                                        <input type="submit" value="" class="btn-buy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <%end%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<script type="text/javascript" charset="utf-8">
+    $("#order_line_item_property_id").change(function(){
+        $(".goods-price").hide();
+        $("#p_"+this.value).show();
+    })
+</script>
+
+
+<div id="cart_list">
+    <%=render :partial => "order_line_items/items_list"%>
+</div>
