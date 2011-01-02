@@ -20,8 +20,8 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .white { color:#FFF; text-decoration:none; }
 .white:hover { color:#FFF; text-decoration:none; }
 .enjoyoungok { width: 1000px; margin:0 auto 0 auto; }
-.loginbar { width:100%; margin-top:10px; height:24px; line-height:24px; margin-bottom:2px; }
-.loginbar span { display:block; float:right; margin-left:5px; }
+.loginbar { width:100%; margin-top:10px; height:24px; line-height:24px; margin-bottom:2px; text-align:right;}
+.loginbar span {  margin-left:5px; }
 .loginbar a { margin:2px; }
 .input { border:1px solid #000; height:18px; }
 .oknav { width:1000px; height:34px; background: #000 url(../images/nav_bg.jpg) repeat-x; margin-top:1px; border-bottom:9px #cccbd0 solid; }
