@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :login_required,:only => [:new]
+  before_filter :login_required,:only => [:new,:create,:show]
 
   def new
     @order = Order.new
@@ -61,8 +61,14 @@ class OrdersController < ApplicationController
 
   def done
     r = ActiveMerchant::Billing::Integrations::Alipay::Return.new(request.query_string)
-    unless @result = r.success?
+    if r.success?
+      @order = Order.find_by_oid(r.order)
+      @order.update_attribute(:status,1)
+      flash[:notice] = "您的订单支付成功"
+      redirect_to "/"
+    else
       logger.warn(r.message)
+      render :text => "支付失败"
     end
   end
 
