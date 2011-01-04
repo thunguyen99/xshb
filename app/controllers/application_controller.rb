@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
 protected
   def access_denied
-    flash[:error] = '你没有登陆或者没有权限执行此操作。'
+    flash[:error] = '请先登录。'
     redirect_to login_path
   end
 

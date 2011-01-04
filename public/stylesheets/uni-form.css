@@ -98,7 +98,7 @@
 
       .uniForm .inlineLabels label,
       .uniForm .inlineLabels .label,
-      .uniForm .inlineLabels .readOnlyLabel{ float: left; margin: .3em 2% 0 0; padding: 0; line-height: 1; position: relative; width: 32%; }
+      .uniForm .inlineLabels .readOnlyLabel{ float: left; margin: .3em 2% 0 0; padding: 0; line-height: 1; position: relative; width: 32%; text-align:right;}
       
       .uniForm .inlineLabels .readOnlyLabel{ margin: 0; }
       
