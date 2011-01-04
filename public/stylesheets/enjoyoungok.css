@@ -249,6 +249,7 @@ background-color: transparent;
 .FormWrap .division .liststyle {border:1px solid #DDDDDD;margin:0;width:100%;}
 .span-2 {width:70px;}
 .span-3 {width:110px;}
+.span-4 {width:150px;}
 .span-5 {width:190px;}
 .span-9 {width:350px;}
 .span-auto {width:auto;}
@@ -266,3 +267,21 @@ background-color: transparent;
 .btn-confirm {background:url("/images/btn-confirm.gif") repeat scroll 0 0 transparent;width:167px;}
 .btn-pay {background:url("/images/btn-pay.gif") repeat scroll 0 0 transparent;height:36px;width:112px;}
 /* end order_form */
+
+/* member */
+.MemberSidebar {float:left;width:170px;padding:10px;}
+.MemberMenu {background:none repeat scroll 0 0 #F0F0F0;}
+.MemberMenu .title {background:url("/images/membermenu_title_bg.gif") repeat scroll 0 0 transparent;height:7px;overflow:hidden;}
+.MemberMenu .body {background:none repeat scroll 0 0 #FFFFFF;border-left:1px solid #E5E5E5;border-right:1px solid #E5E5E5;margin-right:2px;padding:0 1px;}
+.MemberMenu .foot {background:url("/images/membermenu_title_bg.gif") repeat scroll 0 0 transparent;height:7px;overflow:hidden;}
+.MemberMenu li {line-height:20px;}
+.MemberMenu span {border-bottom:1px solid #EAEAEA;border-top:1px solid #EAEAEA;color:#333333;display:block;font-size:12px;font-weight:bold;padding:2px 0;}
+.MemberMenu span div {margin:0 5px;}
+.MemberMenu a {color:#464646;display:block;padding:0 30px 0 0;text-indent:30px;}
+.MemberMain {float:right;width:80%;}
+.MemberMain .title {color:#464646;font-size:14px;font-weight:bold;margin:5px 0 10px;}
+.memberlist {color:#7E7E7E;}
+.memberlist td {border-bottom:1px solid #E5E5E5;color:#7E7E7E;padding:7px 0 7px 5px;vertical-align:middle;}
+.memberlist a {color:#FE6C00;text-decoration:none;}
+.blueth th{background:url(/images/blueth.gif) repeat-x center;color:#464646;height:27px;line-height:27px;text-align:left;padding-left:5px;}
+/* end member */
