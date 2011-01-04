@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_filter :login_required,:only => [:new]
+  before_filter :login_required,:only => [:new,:create,:show]
+  skip_before_filter :verify_authenticity_token,:only => [:notify]
 
   def new
     @order = Order.new
@@ -12,7 +13,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.user = current_user
-    oli = OrderLineItem.in_user(current_user)
+    oli = OrderLineItem.in_user(current_user).ordered(false)
     olis = oli.all
     if olis.empty?
       render :text => "购买商品不能空"
@@ -44,25 +45,28 @@ class OrdersController < ApplicationController
 
     notification.acknowledge
 
+    oid = params[:out_trade_no]
+    @order = Order.find_by_oid(oid)
+
     case notification.status
-    when "WAIT_BUYER_PAY"
-
-    when "WAIT_SELLER_SEND_GOODS"
-
-    when "WAIT_BUYER_CONFIRM_GOODS"
-
-    when "TRADE_FINISHED"
-      @order.pay!
+    when "TRADE_SUCCESS"
+      @order.update_attribute(:status,1) if @order.status == 0
+      render :text => "订单支付成功"
     else
-      @order.fail_payment!
+      render :text => "订单支付失败"
     end
-
   end
 
   def done
     r = ActiveMerchant::Billing::Integrations::Alipay::Return.new(request.query_string)
-    unless @result = r.success?
+    if r.success?
+      @order = Order.find_by_oid(r.order)
+      @order.update_attribute(:status,1)
+      flash[:notice] = "您的订单支付成功"
+      redirect_to "/"
+    else
       logger.warn(r.message)
+      render :text => "支付失败"
     end
   end
 

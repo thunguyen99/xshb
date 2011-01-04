@@ -14,7 +14,7 @@ class OrderLineItemsController < ApplicationController
 
     unless @error_message
       p = Property.find(property_id)
-      oli = OrderLineItem.in_user(current_user).in_property(p).first
+      oli = OrderLineItem.in_user(current_user).in_property(p).ordered(false).first
       unless oli
         @order_line_item = OrderLineItem.new(params[:order_line_item])
         @order_line_item.user = current_user
