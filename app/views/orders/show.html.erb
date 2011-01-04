@@ -20,8 +20,8 @@
                         <% payment_service_for "#{@order.oid}", ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
                                                     :service => :alipay,
                                                     :html => { :id => 'payment-form', :method => :get } do |service| %>
-                          <%# service.total_fee "#{@order.amount}" %>
-                          <% service.total_fee 0.01 %>
+                          <% service.total_fee "#{@order.amount}" %>
+                          <%# service.total_fee 0.01 %>
                           <% service.seller :id => ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT %>
                           <%# service.seller :email => ActiveMerchant::Billing::Integrations::Alipay::EMAIL %>
                           <% service.notify_url url_for(:only_path => false, :controller=>'orders', :action => 'notify') %>

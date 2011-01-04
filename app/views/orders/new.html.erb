@@ -16,22 +16,22 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <em style="color: red;">*</em>收货地址：
-                                        </td>
-                                        <td>
-                                            <%=f.text_field :address%>
-                                        </td>
-                                        <td> 邮编： <%=f.text_field :zip_code,:class=>"span-2"%>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
                                             <em style="color: red;">*</em>收货人姓名：
                                         </td>
                                         <td colspan="2">
                                             <%=f.text_field :receiver_name%>
                                         </td>
                                     </tr>
+									<tr>
+										<td>
+											<em style="color: red;">*</em>收货地址：
+										</td>
+										<td>
+											<%=f.text_field :address%>
+										</td>
+										<td> 邮编： <%=f.text_field :zip_code,:class=>"span-2"%>
+										</td>
+									</tr>
                                     <tr>
                                         <td>
                                             <em style="color: red;">*</em>手机：
