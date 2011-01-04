@@ -35,8 +35,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    if @order.user != current_user
-      render :text => "不能查看他人订单"
+    unless current_user.has_role?("admin")
+      if @order.user != current_user
+        render :text => "不能查看他人订单"
+      end
     end
   end
 

@@ -90,7 +90,7 @@
         </tbody>
     </table>
 
-    <%if @order.status == 0%>
+    <%unless current_user.has_role?("admin") || @order.status == 1%>
     <div class="division">
         <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <tbody>

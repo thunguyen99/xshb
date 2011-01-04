@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  acts_as_authorization_subject
+
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
@@ -8,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :xsvips
   has_many :orders
   has_many :order_line_items
+  has_and_belongs_to_many :roles
 
   validates_presence_of     :login, :name, :email
   validates_uniqueness_of   :login, :email
@@ -32,6 +35,7 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation, :mobile
 
+  after_create :add_role
 
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
@@ -54,8 +58,10 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
-  protected
+protected
 
-
+  def add_role
+    self.roles << Role.find_by_name("member")
+  end
 
 end
