@@ -1,15 +1,23 @@
 ActionController::Routing::Routes.draw do |map|
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.logout    '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login     '/login', :controller => 'sessions', :action => 'new'
+  map.register  '/register', :controller => 'users', :action => 'create'
+  map.signup    '/signup', :controller => 'users', :action => 'new'
+  map.check_un  '/users/check_un', :controller => "users", :action => "check_un"
+  map.check_email '/users/check_email', :controller => "users", :action => "check_email"
+  map.subscription  '/subscription', :controller => "products", :action => "index"
+
   map.resources :users
 
   map.resource :session
 
   map.resources :xsvips
 
-  map.resources :orders,:collection => {:notify => :get,:done => :get,:show_order => :get}
+  map.resources :products
+
+  map.resources :order_line_items,:member => {:update_quantity => :post}
+
+  map.resources :orders,:collection => {:notify => :post,:done => :get,:show_order => :get}
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -45,7 +53,6 @@ ActionController::Routing::Routes.draw do |map|
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
   map.root :controller => 'home', :action => 'index'
-  map.test '/test', :controller => 'home', :action => 'test'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,20 +1,34 @@
-<div class="p_form">
-<h1>用户登录</h1>
+<% content_for :header do -%>
+	<%= javascript_include_merged :signup %>
+	<%= stylesheet_link_merged :signup %>
+	<% end -%>
 
-<div class="user_form">
-<% form_tag session_path do -%>
-<div><%= label_tag 'login','用户名' %>
-<%= text_field_tag 'login', @login %></div>
+	<div class="p_form">
 
-<div><%= label_tag 'password','密码' %>
-<%= password_field_tag 'password', nil %></div>
+		<% form_tag session_path, :class => "uniForm" do -%>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
+		<fieldset class="inlineLabels">
+			<h3>登录</h3>
+			<div class="row ctrlHolder">
+				<%= label_tag 'login','用户名' %>
+				<%= text_field_tag 'login', @login %>
+			</div>
 
-<div><%= submit_tag '我要登录' %></div>
-<% end -%>
-</div>
-</div>
+			<div class="row ctrlHolder">
+				<%= label_tag 'password','密码' %>
+				<%= password_field_tag 'password', nil %>
+			</div>
+
+			<!-- Uncomment this if you want this functionality
+			<p><%= label_tag 'remember_me', 'Remember me' %>
+			<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+			-->
+
+			<div class="buttonHolder">
+				<%= submit_tag '我要登录' %>
+			</div>
+		</fieldset>
+		<% end -%>
+
+
+	</div>

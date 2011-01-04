@@ -4,6 +4,24 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def check_un
+    user = User.find_by_login(params[:user][:login])
+    json = "#{user.nil?}"
+
+    respond_to do |wants|
+      wants.js { render :text => json }
+    end
+  end
+
+  def check_email
+    user = User.find_by_email(params[:user][:email])
+    json = "#{user.nil?}"
+    
+    respond_to do |wants|
+      wants.json { render :text => json }
+    end
+  end
 
   def create
     logout_keeping_session!

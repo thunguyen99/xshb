@@ -1,11 +1,73 @@
 class OrdersController < ApplicationController
+  before_filter :login_required,:only => [:new,:create,:show]
+  skip_before_filter :verify_authenticity_token,:only => [:notify]
+
+  def new
+    @order = Order.new
+    olis = OrderLineItem.in_user(current_user).all
+    if olis.empty?
+      redirect_to "/products"
+    end
+  end
+
+  def create
+    @order = Order.new(params[:order])
+    @order.user = current_user
+    oli = OrderLineItem.in_user(current_user).ordered(false)
+    olis = oli.all
+    if olis.empty?
+      render :text => "购买商品不能空"
+      return
+    end
+    Order.transaction do
+      if @order.save
+        amount = oli.first(:select=>"sum(total_price) as tp").tp.to_i
+        olis.each do |oli|
+          oli.update_attribute(:order,@order)
+        end
+        @order.update_attribute(:amount,amount)
+        redirect_to "/orders/#{@order.id}"
+      else
+        render :action => "new"
+      end
+    end
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    if @order.user != current_user
+      render :text => "不能查看他人订单"
+    end
+  end
 
   def notify
-    logger.info "notify!!!"
+    notification = ActiveMerchant::Billing::Integrations::Alipay::Notification.new(request.raw_post)
+
+    notification.acknowledge
+
+    oid = params[:out_trade_no]
+    @order = Order.find_by_oid(oid)
+
+    case notification.status
+    when "TRADE_SUCCESS"
+      @order.update_attribute(:status,1) if @order.status == 0
+      render :text => "订单支付成功"
+    else
+      render :text => "订单支付失败"
+    end
   end
 
   def done
-    logger.info "done!!!"
+    r = ActiveMerchant::Billing::Integrations::Alipay::Return.new(request.query_string)
+    if r.success?
+      @order = Order.find_by_oid(r.order)
+      @order.update_attribute(:status,1)
+      flash[:notice] = "您的订单支付成功"
+      redirect_to "/"
+    else
+      logger.warn(r.message)
+      render :text => "支付失败"
+    end
   end
 
   def show_order

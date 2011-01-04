@@ -7,13 +7,13 @@
 	    </span>
     <%else%>
 	    <% form_tag session_path,:name=>"login_form" do -%>
+	    <span>用户名：</span>
+	    <span><%= text_field_tag 'login', @login ,:class=>"input" %></span>
+	    <span>密码：</span>
+	    <span><%= password_field_tag 'password', nil ,:class=>"input" %></span>
 	    <span style="margin-left:10px;">
 	    	<strong><a href="javascript:document.login_form.submit();">登录</a><a>|</a><a href="/signup">注册</a></strong>
 	    </span>
-	    <span><%= password_field_tag 'password', nil ,:class=>"input" %></span>
-	    <span>密码：</span>
-	    <span><%= text_field_tag 'login', @login ,:class=>"input" %></span>
-	    <span>用户名：</span>
 	    <div class="blank0"></div>
 	    <% end %>
 	<%end%>
@@ -22,10 +22,10 @@
 <div><a href="/"><img src="/images/xshb_logo.jpg" /></a><img src="/images/banner-01.jpg" /></div>
 <!--导航tiao-->
 <div class="oknav">
-    <div class="oknav_a1"><a class="current">首 页</a><a href="#">天 下</a><a href="#">商 业</a><a href="#">文 化</a><a href="#">设 计</a><a href="#">精 英</a><a href="#">时 尚</a><a href="#">指 南</a></div>
+    <div class="oknav_a1"><a href="/" class="current">首 页</a><a href="#">天 下</a><a href="#">商 业</a><a href="#">文 化</a><a href="#">设 计</a><a href="#">精 英</a><a href="#">时 尚</a><a href="#">指 南</a></div>
     <div class="oknav_a2"><span >
         <input name="input" type="text" size="22" />
-    </span><span><a href="#"><img src="/images/eyok02.jpg" /></a></span><span><a href="#"><img src="/images/eyok03.jpg" /></a></span>
+    </span><span><a href="#"><img src="/images/eyok02.jpg" /></a></span><span><a href="/subscription" target="_blank"><img src="/images/eyok03.jpg" /></a></span>
     <div class="blank0"></div>
 </div>
 <div class="blank0"></div>

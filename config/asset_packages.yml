@@ -1,0 +1,20 @@
+---
+javascripts:
+- base:
+  - jquery-1.4a2.min
+  - slide
+  - thickbox-compressed
+  - global
+  - application
+- signup:
+  - jquery.validate
+  - jquery.metadata
+  - messages_cn
+stylesheets:
+- base:
+  - enjoyoungok
+  - thickbox
+- signup:
+  - uni-form
+  - default.uni-form
+  - signup
