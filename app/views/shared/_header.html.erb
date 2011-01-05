@@ -2,22 +2,22 @@
     <!--登录条-->
     <div class="loginbar">
     <%if logged_in?%>
-    	<span style="margin-left:10px;">
-	    	<strong>您好，<%=current_user.name%> | <a href="/logout">注销</a></strong>
-	    </span>
+        <span style="margin-left:10px;">
+            <strong>您好，<%=current_user.name%> | <a href="/my/orders">会员中心</a> | <a href="/logout">注销</a></strong>
+        </span>
     <%else%>
-	    <% form_tag session_path,:name=>"login_form" do -%>
-	    <span>用户名：</span>
-	    <span><%= text_field_tag 'login', @login ,:class=>"input" %></span>
-	    <span>密码：</span>
-	    <span><%= password_field_tag 'password', nil ,:class=>"input" %></span>
-	    <span style="margin-left:10px;">
-	    	<strong><a href="javascript:document.login_form.submit();">登录</a><a>|</a><a href="/signup">注册</a></strong>
-	    </span>
-	    <div class="blank0"></div>
-	    <% end %>
-	<%end%>
-	</div>
+        <% form_tag session_path,:name=>"login_form" do -%>
+        <span>用户名：</span>
+        <span><%= text_field_tag 'login', @login ,:class=>"input" %></span>
+        <span>密码：</span>
+        <span><%= password_field_tag 'password', nil ,:class=>"input" %></span>
+        <span style="margin-left:10px;">
+            <strong><a href="javascript:document.login_form.submit();">登录</a><a>|</a><a href="/signup">注册</a></strong>
+        </span>
+        <div class="blank0"></div>
+        <% end %>
+    <%end%>
+    </div>
 <!--登录结束-->
 <div><a href="/"><img src="/images/xshb_logo.jpg" /></a><img src="/images/banner-01.jpg" /></div>
 <!--导航tiao-->

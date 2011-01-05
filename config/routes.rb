@@ -19,6 +19,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :orders,:collection => {:notify => :post,:done => :get,:show_order => :get}
 
+  map.resources :my, :collection => {:orders => :get},
+                     :member => {:order_show => :get}
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
