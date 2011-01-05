@@ -293,3 +293,6 @@ background-color: transparent;
 .pagination span.current {padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #429ED1; font-weight: bold; background-color: #C8E8F3;}
 .pagination span.disabled {padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd}
 /* Pagination */
+
+
+form span.red {color:red;background:none;line-height:0;}
