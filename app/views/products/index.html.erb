@@ -1,24 +1,3 @@
-<%if false%>
-<% payment_service_for 'id-123', ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
-                            :service => :alipay,
-                            :html => { :id => 'payment-form', :method => :get } do |service| %>
-  <% service.total_fee 0.01 %>
-  <% service.seller :id => ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT %>
-  <%# service.seller :email => ActiveMerchant::Billing::Integrations::Alipay::EMAIL %>
-  <% service.notify_url url_for(:only_path => false, :controller=>'orders', :action => 'notify') %>
-  <% service.return_url url_for(:only_path => false, :controller=>'orders', :action => 'done') %>
-  <% service.show_url url_for(:only_path => false, :controller=>'orders', :action => 'show_order') %>
-  <% service.body '星尚画报订阅' %>
-  <% service.charset "utf-8" %>
-  <% service.service ActiveMerchant::Billing::Integrations::Alipay::Helper::CREATE_DIRECT_PAY_BY_USER %>
-  <% service.payment_type 1 %>
-  <% service.subject '星尚画报' %>
-  <% service.sign %>
-<% end %>
-<%= button_to_function "Submit", "document.getElementById('payment-form').submit();" %>
-<%end%>
-
-
 <table width="100%" style="padding:15px;" class="GoodsInfoWrap">
     <tbody>
         <tr>
@@ -35,9 +14,7 @@
                 <%remote_form_for @order_line_item,:update=>"cart_list" do |f|%>
                     <%=f.hidden_field :product_id,:value=>@product.id%>
                     <h2 class="goodsname">超值订阅《星尚画报》周刊</h2>
-                    <p class="brief">即日起至2010年12月31日，在线订阅《星尚画报》享超值优惠！全年订阅，免费赠阅4期；季度订购，免费赠阅2期
-                        随机抽取100位幸运读者可获：有机培植25g日+夜双效柔润修护霜（50份），有机培植40g眼部凉菜紧致精华（50份）。
-                        获奖名单将于2011年1月1日之后公布，请认真填写联络电话，以便我们与您联系具体领奖方式。</p>
+                    <p class="brief">2011年，《星尚画报》作为时尚生活周刊的新贵，秉承“影响中国人的生活方式”的理念，致力定制个性时尚生活，在这个文化多元化的时代，做最独特的周刊画报。《星尚画报》每周传播全球生活资讯，解读都市时尚，提倡生活关怀，倡导健康，积极，环保的观念，发掘中国生活态度，传递中国生活价值。每周二在上海，北京，广州等各大城市同步上市。</p>
                         <ul class="goodsprops clearfix">
                             <li><span>计量单位：</span>年度-季度</li>
                         </ul>

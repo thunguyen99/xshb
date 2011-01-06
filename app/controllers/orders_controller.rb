@@ -35,8 +35,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    if @order.user != current_user
-      render :text => "不能查看他人订单"
+    unless current_user.has_role?("admin")
+      if @order.user != current_user
+        render :text => "不能查看他人订单"
+      end
     end
   end
 
@@ -63,7 +65,7 @@ class OrdersController < ApplicationController
       @order = Order.find_by_oid(r.order)
       @order.update_attribute(:status,1)
       flash[:notice] = "您的订单支付成功"
-      redirect_to "/"
+      redirect_to "/my/#{@order.id}/order_show"
     else
       logger.warn(r.message)
       render :text => "支付失败"

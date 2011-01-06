@@ -82,27 +82,27 @@
 	<div class="message_container"><%= error_messages_for :user %></div>
 	
 	<div class="row ctrlHolder">
-		<%= f.label :login, '用户名' %>
+		<%= f.label :login, '用户名<span class="red">*</span>' %>
 		<%= f.text_field :login%>
 		<p class="formHint">英文字母、数字和下划线组合，不少于4个字符</p>
 	</div>
 	<div class="row ctrlHolder">
-		<%= f.label :email, '电子邮件' %>
+		<%= f.label :email, '电子邮件<span class="red">*</span>' %>
 		<%= f.text_field :email %>
 		<p class="formHint">我们将发送激活邮件给您，请确认电邮可用</p>
 	</div>
 	<div class="row ctrlHolder">
-		<%= f.label :name, '昵称' %>
+		<%= f.label :name, '昵称<span class="red">*</span>' %>
 		<%= f.text_field :name %>
 		<p class="formHint"></p>
 	</div>
 	<div class="row ctrlHolder">
-		<%= f.label :password, '密码' %>
+		<%= f.label :password, '密码<span class="red">*</span>' %>
 		<%= f.password_field :password %>
 		<p class="formHint">英文字母，不少于6个字符</p>
 	</div>
 	<div class="row ctrlHolder">
-		<%= f.label :password_confirmation, '重复密码' %>
+		<%= f.label :password_confirmation, '重复密码<span class="red">*</span>' %>
 		<%= f.password_field :password_confirmation %>
 		<p class="formHint">请再输入一次密码</p>
 	</div>
