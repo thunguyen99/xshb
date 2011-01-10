@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :login_required,:only => [:new,:create,:show]
+  before_filter :login_required, :only => [:new, :create,:show]
   skip_before_filter :verify_authenticity_token,:only => [:notify]
 
   def new
