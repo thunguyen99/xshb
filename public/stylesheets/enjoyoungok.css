@@ -145,7 +145,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 #imageFlow .arrow-left { position: absolute; }
 #imageFlow .arrow-right { position: absolute; right: 0px; }
 #imageFlow .bar { position: absolute; height: 16px; left: 25px; }
-.appreciate01 { width:982px; height:645px; position:relative; overflow:hidden; margin:8px; background:#000 url(../images/eyok27.jpg) no-repeat;}
+.appreciate01 { width:982px; height:786px; position:relative; overflow:hidden; margin:8px; background:#000 url(../images/eyok27.jpg) no-repeat;}
 
 .neiye_a4top{ height:278px; width:968px; border-bottom:1px solid #dadada; padding:15px; }
 .neiye_a4top span{ display:block;  padding:0 5px 0 5px;}
