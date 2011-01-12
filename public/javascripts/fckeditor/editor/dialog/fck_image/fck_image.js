@@ -36,11 +36,11 @@ var bImageButton = ( document.location.search.length > 0 && document.location.se
 // Set the dialog tabs.
 dialog.AddTab( 'Info', FCKLang.DlgImgInfoTab ) ;
 
-if ( !bImageButton && !FCKConfig.ImageDlgHideLink )
+/*if ( !bImageButton && !FCKConfig.ImageDlgHideLink )
 	dialog.AddTab( 'Link', FCKLang.DlgImgLinkTab ) ;
 
 if ( FCKConfig.ImageUpload )
-	dialog.AddTab( 'Upload', FCKLang.DlgLnkUpload ) ;
+	dialog.AddTab( 'Upload', FCKLang.DlgLnkUpload ) ;*/
 
 if ( !FCKConfig.ImageDlgHideAdvanced )
 	dialog.AddTab( 'Advanced', FCKLang.DlgAdvancedTag ) ;
@@ -49,8 +49,8 @@ if ( !FCKConfig.ImageDlgHideAdvanced )
 function OnDialogTabChange( tabCode )
 {
 	ShowE('divInfo'		, ( tabCode == 'Info' ) ) ;
-	//ShowE('divLink'		, ( tabCode == 'Link' ) ) ;
-	//ShowE('divUpload'	, ( tabCode == 'Upload' ) ) ;
+//	ShowE('divLink'		, ( tabCode == 'Link' ) ) ;
+//	ShowE('divUpload'	, ( tabCode == 'Upload' ) ) ;
 	ShowE('divAdvanced'	, ( tabCode == 'Advanced' ) ) ;
 }
 
