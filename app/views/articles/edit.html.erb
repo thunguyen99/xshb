@@ -1,0 +1,33 @@
+<div style="margin: auto; width: 950px;">
+    <%=render :partial=>"shared/sidebar"%>
+
+    <div class="MemberMain">
+        <div style="padding:10px;">
+            <% form_for @article do |f| -%>
+            <%=f.error_messages%>
+            <div class="FormWrap model_form">
+                <h3>发布文章</h3>
+                <p>
+                    <%=f.label :title ,"文章标题<em>*</em>"%>
+                    <%=f.text_field :title%>
+                </p>
+                <p>
+                    <%=f.label :category_id ,"文章分类<em>*</em>"%>
+                    <%= f.select :category_id, Category.all.collect{|p| [p.name, p.id]}%>
+                </p>
+                <p>
+                    <%=f.label :is_published ,"是否发布"%>
+                    <%= f.check_box :is_published %>
+                </p>
+                <p>
+                    <%=f.label :content,"文章内容："%>
+                    <%=f.text_area :content,:rows=>5%>
+                </p>
+                <p style="text-align:center;"><%=f.submit "保存"%></p>
+            </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>

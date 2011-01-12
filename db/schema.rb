@@ -9,7 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110104215701) do
+ActiveRecord::Schema.define(:version => 20110112055152) do
+
+  create_table "articles", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "is_published", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.text     "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "order_line_items", :force => true do |t|
     t.integer  "order_id"

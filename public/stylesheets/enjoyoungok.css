@@ -296,3 +296,7 @@ background-color: transparent;
 
 
 form span.red {color:red;background:none;line-height:0;}
+.model_form {background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);}
+.model_form p {margin-left:150px; padding:10px;}
+.model_form label {width:70px;float:left;}
+.model_form label em {color:red;}

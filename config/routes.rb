@@ -15,6 +15,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :products
 
+  map.resources :categories
+
+  map.resources :articles
+
   map.resources :order_line_items,:member => {:update_quantity => :post}
 
   map.resources :orders,:collection => {:notify => :post,:done => :get,:show_order => :get}
