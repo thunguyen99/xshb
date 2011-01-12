@@ -1,3 +1,4 @@
+<%= javascript_include_tag :fckeditor %>
 <div style="margin: auto; width: 950px;">
     <%=render :partial=>"shared/sidebar"%>
 
@@ -19,11 +20,10 @@
                     <%=f.label :is_published ,"是否发布"%>
                     <%= f.check_box :is_published %>
                 </p>
-                <p>
-                    <%=f.label :content,"文章内容："%>
-                    <%=f.text_area :content,:rows=>5%>
-                </p>
-                <p style="text-align:center;"><%=f.submit "保存"%></p>
+
+                    <%= fckeditor_textarea("article", "content", :toolbarSet => 'Simple', :width => '100%', :height => '350px',  :path => "/") %>
+
+                <p style="margin-left:300px;"><%=f.submit "保存"%></p>
             </div>
             <%end%>
         </div>

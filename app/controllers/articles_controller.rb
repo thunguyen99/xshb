@@ -30,8 +30,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    puts params[:article][:is_published]
-    puts "@@@@@@"
     if @article.update_attributes(params[:article])
       flash[:notice] = "#{@article.title} 修改成功"
       redirect_to "/articles"
