@@ -1,0 +1,45 @@
+<div style="margin: auto; width: 950px;">
+    <%=render :partial=>"shared/sidebar"%>
+
+    <div class="MemberMain">
+        <div style="padding:10px;">
+            <% form_for @panel_content, :url => panel_contents_path, :html=>{:multipart => true} do |f| -%>
+            <%=f.error_messages%>
+            <div class="FormWrap model_form">
+                <h3>添加内容</h3>
+                <p>
+                    <%=f.label :title,"标题<em>*</em>"%>
+                    <%=f.text_field :title%>
+                </p>
+                <p>
+                    <%=f.label :panel_category_id ,"分类<em>*</em>"%>
+                    <%= f.select :panel_category_id, PanelCategory.all.collect{|p| [p.name, p.id]}%>
+                </p>
+                <p>
+                    <%=f.label :link,"链接地址"%>
+                    <%=f.text_field :link%>
+                </p>
+                <p>
+                    <%=f.label :is_published ,"是否发布"%>
+                    <%= f.check_box :is_published %>
+                </p>
+                <p>
+                    <%=f.label :weight,"权重"%>
+                    <%=f.text_field :weight%>
+                </p>
+                <p>
+                    <%=f.label :uploaded_data,"上传图片"%>
+                    <%=f.file_field :uploaded_data%>
+                </p>
+                <p>
+                    <%=f.label :description,"简介："%>
+                    <%=f.text_area :description,:rows=>5%>
+                </p>
+                <p style="text-align:center;"><%=f.submit "保存"%></p>
+            </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>
