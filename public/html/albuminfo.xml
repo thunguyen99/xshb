@@ -1,6 +1,6 @@
 <artworkinfo>
 	<albuminfo>
-		<artLocation>../images/appreciate/app1.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app1.jpg</artLocation>
 		<artist></artist>
 		<albumName></albumName>
 		<artistLink></artistLink>
@@ -8,7 +8,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app2.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app2.jpg</artLocation>
 		<artist>The White Stripes</artist>
 		<albumName>Elephant</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -16,7 +16,7 @@
 	</albuminfo>
 	
 	<albuminfo>
-		<artLocation>../images/appreciate/app6.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app3.jpg</artLocation>
 		<artist>Kanye Wests</artist>
 		<albumName>Graduation</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -24,7 +24,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app12.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app4.jpg</artLocation>
 		<artist>A Fine Frenzy</artist>
 		<albumName>One Cell In The Sea</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -32,7 +32,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app11.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app5.jpg</artLocation>
 		<artist>Amy Winehouse</artist>
 		<albumName>Back to Black</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -40,7 +40,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app13.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app6.jpg</artLocation>
 		<artist>The Vines</artist>
 		<albumName>Highly Evolved</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -48,7 +48,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app7.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app7.jpg</artLocation>
 		<artist>The Strokes</artist>
 		<albumName>Is This It</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -56,7 +56,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app8.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app8.jpg</artLocation>
 		<artist>Yeah Yeah Yeahs</artist>
 		<albumName>Maps - Single</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -64,7 +64,7 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app15.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app9.jpg</artLocation>
 		<artist>DangerDoom</artist>
 		<albumName>The Mouse and the Mask</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
@@ -72,7 +72,81 @@
 	</albuminfo>
 
 	<albuminfo>
-		<artLocation>../images/appreciate/app10.jpg</artLocation>
+		<artLocation>../images/appreciate/02/app10.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+		<albuminfo>
+		<artLocation>../images/appreciate/02/app11.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app12.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app13.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app14.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app15.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app17.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app18.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app19.jpg</artLocation>
+		<artist>Fort Minor</artist>
+		<albumName>The Rising Tied</albumName>
+		<artistLink>http://www.lanrentuku.com</artistLink>
+		<albumLink>http://www.lanrentuku.com</albumLink>
+	</albuminfo>
+	
+			<albuminfo>
+		<artLocation>../images/appreciate/02/app20.jpg</artLocation>
 		<artist>Fort Minor</artist>
 		<albumName>The Rising Tied</albumName>
 		<artistLink>http://www.lanrentuku.com</artistLink>
