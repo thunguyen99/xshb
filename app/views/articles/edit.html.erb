@@ -20,6 +20,10 @@
                     <%=f.label :is_published ,"是否发布"%>
                     <%= f.check_box :is_published %>
                 </p>
+                <p>
+                    <%=f.label :issue_time ,"发布时间"%>
+                    <%= f.date_select(:issue_time)%>
+                </p>
                 <%= fckeditor_textarea("article", "content", :toolbarSet => 'Simple', :width => '100%', :height => '350px',  :path => "/") %>
                 <p style="margin-left:300px;"><%=f.submit "保存"%></p>
             </div>
