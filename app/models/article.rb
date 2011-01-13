@@ -12,4 +12,17 @@ class Article < ActiveRecord::Base
       "<img src='/images/draft.gif' />"
     end
   end
+
+  def show_logo
+    if self.category.name == "百人榜-沟通"
+      "<span><img src='/images/bairen_gt.jpg' /></span>"
+    elsif self.category.name == "百人榜-传承"
+       "<span><img src='/images/bairen_chch.jpg' /></span>"
+    elsif self.category.name == "百人榜-创新"
+      "<span><img src='/images/bairen_chx.jpg' /></span>"
+    else
+      ""
+    end
+  end
+
 end
