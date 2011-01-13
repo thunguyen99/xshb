@@ -61,10 +61,11 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 .news1{ width:615px; padding:10px; font-size:12px; }
 .news1 span{ display:block;}
 .news1 a { line-height:24px;}
-.news1img { text-align:center;}
+.news1img { text-align:center; margin-bottom:10px;}
 .news1 p{ line-height:20px; margin-top:5px; margin-bottom:10px; text-indent:24px; }
+.news1 b{ line-height:20px;}
 .news1title{ font-size:24px; font-weight:bold; text-align:center;}
-.news2{ font-size:12px;color:#696969; }
+.news2{ font-size:12px;color:#696969; margin-top:5px; }
 .news2 span{ display:block; float:left;}
 .news2left { float:left; line-height:24px;}
 .news2right { float:right;}
