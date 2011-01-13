@@ -1,8 +1,11 @@
 class ArticlesController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required,:except=>[:show]
 
   access_control do
     allow :admin
+    action :show do
+      allow :member
+    end
   end
 
   def index
@@ -22,6 +25,11 @@ class ArticlesController < ApplicationController
       flash[:error]  = "添加失败，请重新尝试"
       render :action => 'new'
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    render :layout => "article"
   end
 
   def edit

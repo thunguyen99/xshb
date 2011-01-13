@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112181427) do
+ActiveRecord::Schema.define(:version => 20110113072458) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110112181427) do
     t.boolean  "is_published", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "issue_time"
   end
 
   create_table "categories", :force => true do |t|
@@ -70,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20110112181427) do
     t.text     "description"
     t.string   "link"
     t.boolean  "is_published",               :default => false
-    t.integer  "weight"
+    t.integer  "weight",                     :default => 0
     t.integer  "panel_category_id"
     t.string   "uploaded_data_file_name"
     t.integer  "uploaded_data_file_size"

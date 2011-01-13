@@ -7,6 +7,7 @@
                 <tbody>
                     <tr>
                         <th>分类名</th>
+                        <th>上级分类</th>
                         <th>备注</th>
                         <th width=80></th>
                     </tr>
@@ -15,6 +16,7 @@
                     <%@categories.each do |category|%>
                     <tr>
                         <td><%=category.name%></td>
+                        <td><%=category.parent.nil? ? "无" : category.parent.name%></td>
                         <td><%=category.memo%></td>
                         <td>
                         <%= link_to "修改", edit_category_url(category)%>
