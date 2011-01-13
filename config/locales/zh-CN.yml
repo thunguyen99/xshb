@@ -115,6 +115,10 @@
 
     models:
        user: "用户"
+       category: "分类"
+       article: "文章"
+       panel_category: "内容分类"
+       panel_content: "内容"
 
     attributes:
        user:
@@ -123,3 +127,13 @@
          email: "电子邮箱"
          password: "密码"
          password_confirmation: "确认密码"
+       category:
+         name: "分类名"
+       article:
+         title: "文章标题"
+         category_id: "文章分类"
+       panel_category:
+         name: "内容分类名"
+       panel_content:
+         title: "内容标题"
+         panel_category_id: "内容分类"

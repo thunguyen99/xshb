@@ -9,7 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110104215701) do
+ActiveRecord::Schema.define(:version => 20110112181427) do
+
+  create_table "articles", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "is_published", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.text     "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "order_line_items", :force => true do |t|
     t.integer  "order_id"
@@ -39,6 +56,31 @@ ActiveRecord::Schema.define(:version => 20110104215701) do
   end
 
   add_index "orders", ["oid"], :name => "index_orders_on_oid", :unique => true
+
+  create_table "panel_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.text     "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "panel_contents", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.boolean  "is_published",               :default => false
+    t.integer  "weight"
+    t.integer  "panel_category_id"
+    t.string   "uploaded_data_file_name"
+    t.integer  "uploaded_data_file_size"
+    t.string   "uploaded_data_height"
+    t.string   "uploaded_data_weight"
+    t.datetime "uploaded_data_update_at"
+    t.string   "uploaded_data_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
