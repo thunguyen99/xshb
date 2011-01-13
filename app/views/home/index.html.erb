@@ -56,10 +56,28 @@ $(function(){
     <div class="hot">
         <div class="hot_01"></div>
         <div class="hot_02">
-            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a1.jpg" /></a></span><span class="span_title"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-范冰冰 </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“如果现在一个20多岁的人没有野心、霸气，那他是没有办法在这个社会上立足的。我会用一种大无畏的精神来盖住那些懒惰的想法。”</a></p></span></div>
-            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a2.jpg" /></a></span><span class="span_title"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-HRH Prince William of Wales </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“是否想成为国王对我而言并不是一个问题，而是一个与生俱来的责任。”</a></p></span></div>
-            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a3.jpg" /></a></span><span class="span_title"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-Pardis Sabeti</a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“从某些角度来看，开展研究和组建乐队的本质是一样的。”</a></p></span></div>
-            <div class=" blank0"></div>
+            <%pcs = PanelContent.list_contents("本期精华-沟通",1)%>
+            <%pcs.each do |pc|%>
+            <div class="hot_02content">
+                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a1.jpg" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
+            </div>
+            <%end%>
+
+            <%pcs = PanelContent.list_contents("本期精华-传承",1)%>
+            <%pcs.each do |pc|%>
+            <div class="hot_02content">
+                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a2.jpg" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
+            </div>
+            <%end%>
+
+            <%pcs = PanelContent.list_contents("本期精华-创新",1)%>
+            <%pcs.each do |pc|%>
+            <div class="hot_02content">
+                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a3.jpg" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
+            </div>
+            <%end%>
+
+            <div class="blank0"></div>
         </div>
     </div>
     <!--本期精华结束-->

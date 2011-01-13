@@ -3,6 +3,9 @@ class ArticlesController < ApplicationController
 
   access_control do
     allow :admin
+    action :show do
+      allow :member
+    end
   end
 
   def index
