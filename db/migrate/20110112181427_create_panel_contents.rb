@@ -5,7 +5,7 @@ class CreatePanelContents < ActiveRecord::Migration
       t.text :description
       t.string :link
       t.boolean :is_published,:default=>false
-      t.integer :weight
+      t.integer :weight,:default=>0
       t.integer :panel_category_id
       t.string :uploaded_data_file_name
       t.integer :uploaded_data_file_size

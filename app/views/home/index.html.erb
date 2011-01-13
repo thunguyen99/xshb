@@ -2,18 +2,18 @@
 <%= javascript_include_tag "jquery.KinSlideshow-1.2.1.min", :cache => true %>
 <script type="text/javascript">
 $(function(){
-	$("#KinSlideshow").KinSlideshow({
-		moveStyle:"right",
-		titleBar:{titleBar_height:35,titleBar_bgColor:"#FFFFFF",titleBar_alpha:0.5},
-		titleFont:{TitleFont_size:14,TitleFont_color:"#000000",TitleFont_weight:"bolder"},
-		btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#000000",btn_fontColor:"#000000",
-		btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#ffffff",
-		btn_borderHoverColor:"#000000",btn_borderWidth:1}
-	});
+    $("#KinSlideshow").KinSlideshow({
+        moveStyle:"right",
+        titleBar:{titleBar_height:35,titleBar_bgColor:"#FFFFFF",titleBar_alpha:0.5},
+        titleFont:{TitleFont_size:14,TitleFont_color:"#000000",TitleFont_weight:"bolder"},
+        btn:{btn_bgColor:"#FFFFFF",btn_bgHoverColor:"#000000",btn_fontColor:"#000000",
+        btn_fontHoverColor:"#FFFFFF",btn_borderColor:"#ffffff",
+        btn_borderHoverColor:"#000000",btn_borderWidth:1}
+    });
 
-	//after slideshow initialize, focus images are moved into new container
-	//need to re-thickboxize them
-	tb_init("#KSS_content a.thickbox, #KSS_contentClone a.thickbox");
+    //after slideshow initialize, focus images are moved into new container
+    //need to re-thickboxize them
+    tb_init("#KSS_content a.thickbox, #KSS_contentClone a.thickbox");
 })
 
 </script>
@@ -22,114 +22,124 @@ $(function(){
 
 <!--左侧-->
 <div class="content_left">
-	<!--跑马灯-->
-	<div id="reception">
-		<div class="news">
-			<marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-				<a href="#">最新消息最新消息最新消息最新消息最新消息最新消息最新消息最新消息</a>
-			</marquee>
-		</div>
-		<div id="closeb" > <a href="javascript:;" onclick="closereception();" title="关闭"><img src="/images/eyok05.jpg" /></a> </div>
-	</div>
-	<!--跑马灯结束-->
-	<!--焦点图-->
-	<div class="ff">
+    <!--跑马灯-->
+    <div id="reception">
+        <div class="news">
+            <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                <a href="#">最新消息最新消息最新消息最新消息最新消息最新消息最新消息最新消息</a>
+            </marquee>
+        </div>
+        <div id="closeb" > <a href="javascript:;" onclick="closereception();" title="关闭"><img src="/images/eyok05.jpg" /></a> </div>
+    </div>
+    <!--跑马灯结束-->
+    <!--焦点图-->
+    <div class="ff">
 
-		<div id="KinSlideshow" style="visibility:hidden;">
-			<!-- <a href="/html/news_05.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
+        <div id="KinSlideshow" style="visibility:hidden;">
+            <!-- <a href="/html/news_05.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
             <a href="/html/news_06.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/2.jpg" alt="未来十年，锥胸挡道" width="662" height="313" /></a>
             <a href="/html/news_07.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/3.jpg" alt="王中磊没那么财色兼收" width="662" height="313" /></a>
             <a href="/html/news_08.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/4.jpg" alt="独家采访意大利设计师 塞缪尔•马扎" width="662" height="313" /></a> -->
-          	<a href="javascript:void();" ><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
+            <a href="javascript:void();" ><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
             <a href="javascript:void();" ><img src="../images/2.jpg" alt="未来十年，锥胸挡道" width="662" height="313" /></a>
             <a href="javascript:void();" ><img src="../images/3.jpg" alt="王中磊没那么财色兼收" width="662" height="313" /></a>
             <a href="javascript:void();" ><img src="../images/4.jpg" alt="独家采访意大利设计师 塞缪尔•马扎" width="662" height="313" /></a>
-			
-		</div>
 
-	</div>
-	<!--焦点图结束-->
-	<!--广告投放-->
-	<div class="ad"><a href="http://test.xshb.cn/html/ifram/advertising.html?keepThis=true&TB_iframe=true&height=400&width=605" class="thickbox"><img src="/images/eyok16.jpg" /></a></div>
-	<!--广告投放结束-->
-	<!--本期精华-->
-	<div class="hot">
-		<div class="hot_01"></div>
-		<div class="hot_02">
-			<div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a1.jpg" /></a></span><span class="span_title"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-范冰冰 </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“如果现在一个20多岁的人没有野心、霸气，那他是没有办法在这个社会上立足的。我会用一种大无畏的精神来盖住那些懒惰的想法。”</a></p></span></div>
-			<div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a2.jpg" /></a></span><span class="span_title"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-HRH Prince William of Wales </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“是否想成为国王对我而言并不是一个问题，而是一个与生俱来的责任。”</a></p></span></div>
-			<div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a3.jpg" /></a></span><span class="span_title"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-Pardis Sabeti</a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“从某些角度来看，开展研究和组建乐队的本质是一样的。”</a></p></span></div>
-			<div class=" blank0"></div>
-		</div>
-	</div>
-	<!--本期精华结束-->
-	<!--微薄开心-->
-	<div class="link">
-		<div class="sina"><a href="http://t.sina.com.cn/xshb" target="_blank">成为粉丝</a></div>
-		<div class="kaixin"><a href="http://www.kaixin001.com/home/?uid=94844394" target="_blank">加为好友</a></div>
-		<div class="blank0"></div>
-	</div>
-	<!--微薄开心结束-->
+        </div>
+
+    </div>
+    <!--焦点图结束-->
+    <!--广告投放-->
+    <div class="ad"><a href="http://test.xshb.cn/html/ifram/advertising.html?keepThis=true&TB_iframe=true&height=400&width=605" class="thickbox"><img src="/images/eyok16.jpg" /></a></div>
+    <!--广告投放结束-->
+    <!--本期精华-->
+    <div class="hot">
+        <div class="hot_01"></div>
+        <div class="hot_02">
+            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a1.jpg" /></a></span><span class="span_title"><a href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-范冰冰 </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_01.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“如果现在一个20多岁的人没有野心、霸气，那他是没有办法在这个社会上立足的。我会用一种大无畏的精神来盖住那些懒惰的想法。”</a></p></span></div>
+            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a2.jpg" /></a></span><span class="span_title"><a href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-HRH Prince William of Wales </a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_02.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“是否想成为国王对我而言并不是一个问题，而是一个与生俱来的责任。”</a></p></span></div>
+            <div class="hot_02content"><span class="span_imgbg"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="/images/a3.jpg" /></a></span><span class="span_title"><a href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-Pardis Sabeti</a></span><span class="span_content"><p><a style="color:#6d6d6d" href="/html/jh_03.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox">“从某些角度来看，开展研究和组建乐队的本质是一样的。”</a></p></span></div>
+            <div class=" blank0"></div>
+        </div>
+    </div>
+    <!--本期精华结束-->
+    <!--微薄开心-->
+    <div class="link">
+        <div class="sina"><a href="http://t.sina.com.cn/xshb" target="_blank">成为粉丝</a></div>
+        <div class="kaixin"><a href="http://www.kaixin001.com/home/?uid=94844394" target="_blank">加为好友</a></div>
+        <div class="blank0"></div>
+    </div>
+    <!--微薄开心结束-->
 </div>
 <!--左侧结束-->
 <!--右侧-->
 <div class="content_right">
-	<!--小导航-->
-	<div id="menu">
-		<ul id="nav">
-			<li class="mainlevel" id="mainlevel_01"><a href="#">星尚榜</a>
-				<ul id="sub_01">
-					<li style="padding-left:5px"><a href="http://www.enjoyoung.cn/news/content/287" target="_blank">星尚明星榜</a></li>
-					<li style="padding-left:5px;border-top:1px solid #fff; "><a href="/html/ranking.html" >星尚价值榜</a></li>
-					<li style="padding-left:5px;border-top:1px solid #fff; "><a href="javascript:alert('即将推出！');">星尚榜3</a></li>
-				</ul>
-			</li>
-			<li class="mainlevel" id="mainlevel_02"><a href="/html/coverage.html">零售网点</a> </li>
-			<li class="mainlevel" id="mainlevel_02"><a href="javascript:alert('即将推出！');">电子杂志</a> </li>
-			<li class="mainlevel" id="mainlevel_02" style="background: url(/images/eyok13.jpg) no-repeat 0 4px; margin-left:4px; width:75px; "><a href="javascript:alert('即将推出！');">APP免费下载</a> </li>
-			<div class=" blank0"></div>
-		</ul>
-	</div>
-	<!--小导航结束-->
-	<!--最新鉴赏-->
-	<div class="appreciate"><span><img src="/images/eyok14.jpg" /></span><span style="margin:10px;"><a href="/html/appreciate.html"><img src="/images/eyok15a.jpg" /></a></span></div>
-	<!--最近鉴赏结束-->
-	<!--小广告-->
-	<div class="ad"><a href="/xsvips"><img src="/images/eyok17.jpg" /></a></div>
-	<!--小广告结束-->
-	<!--读编往来-->
-	<div><img src="/images/eyok18.jpg" />
-		<div class="questions">
-			<div class="questionsleft"><img src="/images/eyok19.jpg" /></div>
-			<div class="questionsright">
-				<ul>
-					<li><a class="hui" href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=98" target="_blank">将近50%的读者和《星尚画报》的观点一致：下一个十年，较小但饱满的锥形胸将主宰胸部审美。</a></li>
-				</ul>
-			</div>
-			<div class="blank0"></div>
-			<div class="questionsbottom"><a href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=98" target="_blank"><img src="/images/eyok20.jpg" /></a>
-				<div class="blank0"></div>
-			</div>
-		</div>
-	</div>
-	<!--读编往来结束-->
-	<!--小广告-->
-	<div class="ad"><a href="/subscription" target="_blank"><img src="/images/eyok22.jpg" /></a></div>
-	<!--小广告结束-->
-	<!--在线调查-->
-	<div><img src="/images/eyok23.jpg" />
-		<div class="questions">
-			<div class="questionscontent">
-				<ul>
-					<li><strong><a href="http://vote.t.sina.com.cn/vid=144990" target="_blank">越来越多的奢侈品牌加入了艺术展的行列，而最近正在或即将举行的的几大展中，你对哪个最感兴趣呢？</a></strong></li>
-				</ul>
-			</div>
-			<div class="questionsbottom"><a href="http://vote.t.sina.com.cn/vid=144990" target="_blank"><img src="/images/eyok21.jpg" /></a><a href="#" style="display:none;"><img src="/images/eyok24.jpg" /></a>
-				<div class="blank0"></div>
-			</div>
-		</div>
-	</div>
-	<!--在线调查结束-->
+    <!--小导航-->
+    <div id="menu">
+        <ul id="nav">
+            <li class="mainlevel" id="mainlevel_01"><a href="#">星尚榜</a>
+                <ul id="sub_01">
+                    <li style="padding-left:5px"><a href="http://www.enjoyoung.cn/news/content/287" target="_blank">星尚明星榜</a></li>
+                    <li style="padding-left:5px;border-top:1px solid #fff; "><a href="/html/ranking.html" >星尚价值榜</a></li>
+                    <li style="padding-left:5px;border-top:1px solid #fff; "><a href="javascript:alert('即将推出！');">星尚榜3</a></li>
+                </ul>
+            </li>
+            <li class="mainlevel" id="mainlevel_02"><a href="/html/coverage.html">零售网点</a> </li>
+            <li class="mainlevel" id="mainlevel_02"><a href="javascript:alert('即将推出！');">电子杂志</a> </li>
+            <li class="mainlevel" id="mainlevel_02" style="background: url(/images/eyok13.jpg) no-repeat 0 4px; margin-left:4px; width:75px; "><a href="javascript:alert('即将推出！');">APP免费下载</a> </li>
+            <div class=" blank0"></div>
+        </ul>
+    </div>
+    <!--小导航结束-->
+
+    <!--最新鉴赏-->
+    <%pcs = PanelContent.list_contents("最新鉴赏",1)%>
+    <%pcs.each do |pc|%>
+    <div class="appreciate">
+        <span><img src="/images/eyok14.jpg" /></span>
+        <span style="margin:10px;">
+            <a href="<%=pc.link%>"><%=image_tag (pc.uploaded_data.url)%></a>
+        </span>
+    </div>
+    <%end%>
+    <!--最近鉴赏结束-->
+
+    <!--小广告-->
+    <div class="ad"><a href="/xsvips"><img src="/images/eyok17.jpg" /></a></div>
+    <!--小广告结束-->
+    <!--读编往来-->
+    <div><img src="/images/eyok18.jpg" />
+        <div class="questions">
+            <div class="questionsleft"><img src="/images/eyok19.jpg" /></div>
+            <div class="questionsright">
+                <ul>
+                    <li><a class="hui" href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=98" target="_blank">将近50%的读者和《星尚画报》的观点一致：下一个十年，较小但饱满的锥形胸将主宰胸部审美。</a></li>
+                </ul>
+            </div>
+            <div class="blank0"></div>
+            <div class="questionsbottom"><a href="http://bbs.enjoyoung.cn/forumdisplay.php?fid=98" target="_blank"><img src="/images/eyok20.jpg" /></a>
+                <div class="blank0"></div>
+            </div>
+        </div>
+    </div>
+    <!--读编往来结束-->
+    <!--小广告-->
+    <div class="ad"><a href="/subscription" target="_blank"><img src="/images/eyok22.jpg" /></a></div>
+    <!--小广告结束-->
+    <!--在线调查-->
+    <div><img src="/images/eyok23.jpg" />
+        <div class="questions">
+            <div class="questionscontent">
+                <ul>
+                    <li><strong><a href="http://vote.t.sina.com.cn/vid=144990" target="_blank">越来越多的奢侈品牌加入了艺术展的行列，而最近正在或即将举行的的几大展中，你对哪个最感兴趣呢？</a></strong></li>
+                </ul>
+            </div>
+            <div class="questionsbottom"><a href="http://vote.t.sina.com.cn/vid=144990" target="_blank"><img src="/images/eyok21.jpg" /></a><a href="#" style="display:none;"><img src="/images/eyok24.jpg" /></a>
+                <div class="blank0"></div>
+            </div>
+        </div>
+    </div>
+    <!--在线调查结束-->
 </div>
 <!--右侧结束-->
 <div class="blank0"></div>
