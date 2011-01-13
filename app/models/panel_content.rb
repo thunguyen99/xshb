@@ -30,7 +30,7 @@ class PanelContent < ActiveRecord::Base
   end
 
   def self.list_contents(category,limit=nil)
-    self.in_category_name(category).published.all(:order=>"weight DESC")
+    self.in_category_name(category).published.all(:order=>"panel_contents.weight DESC,panel_contents.created_at DESC",:limit=>limit)
   end
 
 end

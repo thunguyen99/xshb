@@ -36,15 +36,10 @@ $(function(){
     <div class="ff">
 
         <div id="KinSlideshow" style="visibility:hidden;">
-            <a href="/html/news_05.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
-            <a href="/html/news_06.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/2.jpg" alt="未来十年，锥胸挡道" width="662" height="313" /></a>
-            <a href="/html/news_07.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/3.jpg" alt="王中磊没那么财色兼收" width="662" height="313" /></a>
-            <a href="/html/news_08.html?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="../images/4.jpg" alt="独家采访意大利设计师 塞缪尔•马扎" width="662" height="313" /></a>
-            <!-- <a href="javascript:void();" ><img src="../images/1.jpg" alt="Facebook时代的情感游牧" width="662" height="313" /></a>
-            <a href="javascript:void();" ><img src="../images/2.jpg" alt="未来十年，锥胸挡道" width="662" height="313" /></a>
-            <a href="javascript:void();" ><img src="../images/3.jpg" alt="王中磊没那么财色兼收" width="662" height="313" /></a>
-            <a href="javascript:void();" ><img src="../images/4.jpg" alt="独家采访意大利设计师 塞缪尔•马扎" width="662" height="313" /></a> -->
-
+            <%pcs = PanelContent.list_contents("焦点图",4)%>
+            <%pcs.each do |pc|%>
+            <a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" alt="<%=pc.title%>" width="662" height="313" /></a>
+            <%end%>
         </div>
 
     </div>
