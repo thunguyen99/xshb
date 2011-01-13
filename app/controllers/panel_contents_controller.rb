@@ -6,7 +6,7 @@ class PanelContentsController < ApplicationController
   end
 
   def index
-    @panel_contents = PanelContent.paginate(:all,:per_page=>20,:page => params[:page], :order => 'created_at DESC')
+    @panel_contents = PanelContent.paginate(:all,:per_page=>20,:page => params[:page], :order => 'is_published DESC,weight DESC,created_at DESC')
   end
 
   def new
