@@ -36,7 +36,7 @@
                     <%if @panel_content.uploaded_data.url.blank?%>
                         暂未上传
                     <%else%>
-                        <%=image_tag (@panel_content.uploaded_data.url)%>
+                        <a href="/panel_contents/<%=@panel_content.id%>/croper"><%=image_tag (@panel_content.uploaded_data.url)%></a>
                     <%end%>
                 </p>
                 <p>

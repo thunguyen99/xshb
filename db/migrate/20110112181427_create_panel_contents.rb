@@ -10,7 +10,7 @@ class CreatePanelContents < ActiveRecord::Migration
       t.string :uploaded_data_file_name
       t.integer :uploaded_data_file_size
       t.string :uploaded_data_height
-      t.string :uploaded_data_weight
+      t.string :uploaded_data_width
       t.datetime :uploaded_data_update_at
       t.string :uploaded_data_content_type
       t.timestamps

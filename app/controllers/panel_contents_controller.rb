@@ -55,4 +55,9 @@ class PanelContentsController < ApplicationController
     redirect_to "/panel_contents"
   end
 
+  def croper
+    @panel_content = PanelContent.find(params[:id])
+    render :layout => false
+  end
+
 end
