@@ -300,3 +300,16 @@ form span.red {color:red;background:none;line-height:0;}
 .model_form p {margin-left:150px; padding:10px;}
 .model_form label {width:70px;float:left;}
 .model_form label em {color:red;}
+
+/*2011.1.14*/
+.gifts span { display:block;}
+.gifts img { border:0px; margin:0px; padding:0px;}
+.gifts_01a { width:526px; height:330px; background:url(../images/gifts/g2.jpg) no-repeat; float:left; color:#FFF; font-size:14px; font-weight:bold; }
+.gifts_01a ul { margin:20px 27px 36px 36px;}
+.gifts_01a p { text-indent:20px; line-height:24px; margin:0px;}
+.gifts_01b { float:left;}
+.gifts_footer { width:1000px; height:27px; background:url(../images/gifts/g6.jpg) no-repeat; color:#FFF; font-weight:bold; text-align:center; padding-top:60px;}
+.gfont_01 { font-size:24px; font-weight:bold; color:#FFF;}
+.gfont_01:hover { font-size:24px; font-weight:bold; color:#FFF;}
+.gfont_02 { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
+.gfont_02:hover { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
