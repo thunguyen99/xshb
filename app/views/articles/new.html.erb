@@ -1,4 +1,7 @@
 <%= javascript_include_tag :fckeditor %>
+<style>
+    .model_form p{margin-left:10px;}
+</style>
 <div style="margin: auto; width: 950px;">
     <%=render :partial=>"shared/sidebar"%>
 
@@ -10,11 +13,11 @@
                 <h3>发布文章</h3>
                 <p>
                     <%=f.label :title ,"文章标题<em>*</em>"%>
-                    <%=f.text_field :title%>
+                    <%=f.text_field :title,:size=>60%>
                 </p>
                 <p>
                     <%=f.label :category_id ,"文章分类<em>*</em>"%>
-                    <%= f.select :category_id, Category.all.collect{|p| [p.name, p.id]}%>
+                    <%= f.select :category_id, Category.all.collect{|p| [p.name, p.id]},:selected=>params[:cid].to_i%>
                 </p>
                 <p>
                     <%=f.label :is_published ,"是否发布"%>

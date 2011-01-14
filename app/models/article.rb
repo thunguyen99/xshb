@@ -5,6 +5,10 @@ class Article < ActiveRecord::Base
 
   named_scope :published, :conditions => ["is_published=1"]
 
+  named_scope :in_category_id, lambda {|category_id|
+    { :include=> [:category],:conditions => ["categories.id in (?)", category_id] }
+  }
+
   def show_status
     if self.is_published
       "<img src='/images/published.gif' />"

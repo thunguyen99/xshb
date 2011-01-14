@@ -9,7 +9,13 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.paginate(:all,:per_page=>20,:page => params[:page], :order => 'created_at DESC')
+    article = Article
+    unless params[:cid].blank?
+      c = Category.find(params[:cid])
+      category_ids = c.find_all_subcategory_ids
+      article = article.in_category_id(category_ids)
+    end
+    @articles = article.paginate(:all,:per_page=>20,:page => params[:page], :order => 'articles.created_at DESC')
   end
 
   def new

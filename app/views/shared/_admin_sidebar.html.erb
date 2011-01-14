@@ -4,8 +4,21 @@
     </span>
     <ul style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
         <li>
-            <a href="/articles"><b>全部文章</b></a>
-            <a href="/articles/new"><b>发布文章</b></a>
+            <% Category.no_parent(true).all.each do |c| %>
+                <% text_indent = 20%>
+                <a href="/articles?cid=<%=c.id%>" style="text-indent:<%=text_indent%>px;"><b><%=c.name%></b></a>
+                <%=find_all_subcategories(c,text_indent)%>
+            <% end %>
+        </li>
+    </ul>
+</li>
+
+<li class="MemberMenuList">
+    <span>
+        <div style="font-size: 14px;">分类管理</div>
+    </span>
+    <ul style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
+        <li>
             <a href="/categories"><b>全部分类</b></a>
             <a href="/categories/new"><b>添加分类</b></a>
         </li>
