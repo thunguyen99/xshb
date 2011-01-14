@@ -9,15 +9,15 @@
                 <h3>添加内容</h3>
                 <p>
                     <%=f.label :title,"标题<em>*</em>"%>
-                    <%=f.text_field :title%>
+                    <%=f.text_field :title,:size=>40%>
                 </p>
                 <p>
                     <%=f.label :panel_category_id ,"分类<em>*</em>"%>
-                    <%= f.select :panel_category_id, PanelCategory.all.collect{|p| [p.name, p.id]}%>
+                    <%= f.select :panel_category_id, PanelCategory.all.collect{|p| [p.name, p.id]},:selected=>params[:pcid].to_i%>
                 </p>
                 <p>
                     <%=f.label :link,"链接地址"%>
-                    <%=f.text_field :link%>
+                    <%=f.text_field :link,:size=>40%>
                 </p>
                 <p>
                     <%=f.label :is_published ,"是否发布"%>
@@ -25,7 +25,7 @@
                 </p>
                 <p>
                     <%=f.label :weight,"权重"%>
-                    <%=f.text_field :weight%>
+                    <%=f.text_field :weight,:size=>40%>
                 </p>
                 <p>
                     <%=f.label :uploaded_data,"上传图片"%>

@@ -3,30 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>星尚画报</title>
-<%= stylesheet_link_merged 'base' %>
-<%= javascript_include_merged 'base' %>
-
-<%= yield :header %>
+<link href="/stylesheets/ifram.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="enjoyoungok">
-    <!--头-->
-        <%=render :partial => "shared/header"%>
-    <!--头结束-->
-
-    <div id="flash">
-		<%= flash_message %>
-	</div>
-
-    <!--内容-->
-    <div class="content">
-        <%= yield %>
-    </div>
-    <!--内容结束-->
-
-    <!--底部-->
-        <%= render :partial => 'shared/footer' %>
-    <!--底部结束-->
+<div class="news1">
+    <%=yield%>
 </div>
 <script type="text/javascript">
 

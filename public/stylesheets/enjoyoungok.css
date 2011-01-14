@@ -277,7 +277,7 @@ background-color: transparent;
 .MemberMenu li {line-height:20px;}
 .MemberMenu span {border-bottom:1px solid #EAEAEA;border-top:1px solid #EAEAEA;color:#333333;display:block;font-size:12px;font-weight:bold;padding:2px 0;}
 .MemberMenu span div {margin:0 5px;}
-.MemberMenu a {color:#464646;display:block;padding:0 30px 0 0;text-indent:30px;}
+.MemberMenu a {color:#464646;display:block;padding:0 20px 0 0;text-indent:20px;}
 .MemberMain {float:right;width:80%;}
 .MemberMain .title {color:#464646;font-size:14px;font-weight:bold;margin:5px 0 10px;}
 .memberlist {color:#7E7E7E;}
@@ -297,7 +297,7 @@ background-color: transparent;
 
 form span.red {color:red;background:none;line-height:0;}
 .model_form {background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);}
-.model_form p {margin-left:150px; padding:10px;}
+.model_form p {margin-left:120px; padding:10px;}
 .model_form label {width:70px;float:left;}
 .model_form label em {color:red;}
 

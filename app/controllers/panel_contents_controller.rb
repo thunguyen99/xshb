@@ -6,7 +6,13 @@ class PanelContentsController < ApplicationController
   end
 
   def index
-    @panel_contents = PanelContent.paginate(:all,:per_page=>20,:page => params[:page], :order => 'created_at DESC')
+    panel_content = PanelContent
+    unless params[:pcid].blank?
+      pc = PanelCategory.find(params[:pcid])
+      panel_category_ids = pc.find_all_subcategory_ids
+      panel_content = panel_content.in_category_id(panel_category_ids)
+    end
+    @panel_contents = panel_content.paginate(:all,:per_page=>20,:page => params[:page], :order => 'panel_contents.is_published DESC,panel_contents.weight DESC,panel_contents.created_at DESC')
   end
 
   def new

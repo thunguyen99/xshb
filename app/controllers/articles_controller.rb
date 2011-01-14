@@ -1,12 +1,21 @@
 class ArticlesController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required,:except=>[:show]
 
   access_control do
     allow :admin
+    action :show do
+      allow :member
+    end
   end
 
   def index
-    @articles = Article.paginate(:all,:per_page=>20,:page => params[:page], :order => 'created_at DESC')
+    article = Article
+    unless params[:cid].blank?
+      c = Category.find(params[:cid])
+      category_ids = c.find_all_subcategory_ids
+      article = article.in_category_id(category_ids)
+    end
+    @articles = article.paginate(:all,:per_page=>20,:page => params[:page], :order => 'articles.created_at DESC')
   end
 
   def new
@@ -22,6 +31,11 @@ class ArticlesController < ApplicationController
       flash[:error]  = "添加失败，请重新尝试"
       render :action => 'new'
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    render :layout => "article"
   end
 
   def edit
