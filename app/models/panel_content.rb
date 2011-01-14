@@ -9,6 +9,10 @@ class PanelContent < ActiveRecord::Base
     { :include=> [:panel_category],:conditions => ["panel_categories.name = ?", category_name] }
   }
 
+  named_scope :in_category_id, lambda {|category_id|
+    { :include=> [:panel_category],:conditions => ["panel_categories.id in (?)", category_id] }
+  }
+
   has_attached_file :uploaded_data,
                     :default_url => "",
                     :url => "/images/assets/:attachment/:id/:style/:filename",

@@ -13,7 +13,7 @@
                 </p>
                 <p>
                     <%=f.label :panel_category_id ,"分类<em>*</em>"%>
-                    <%= f.select :panel_category_id, PanelCategory.all.collect{|p| [p.name, p.id]}%>
+                    <%= f.select :panel_category_id, PanelCategory.all.collect{|p| [p.name, p.id]},:selected=>params[:pcid].to_i%>
                 </p>
                 <p>
                     <%=f.label :link,"链接地址"%>

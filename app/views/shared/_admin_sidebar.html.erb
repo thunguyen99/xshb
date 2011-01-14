@@ -18,8 +18,11 @@
     </span>
     <ul style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
         <li>
-            <a href="/panel_contents"><b>全部内容</b></a>
-            <a href="/panel_contents/new"><b>发布内容</b></a>
+            <% PanelCategory.no_parent(true).all.each do |pc| %>
+                <% text_indent = 20%>
+                <a href="/panel_contents?pcid=<%=pc.id%>" style="text-indent:<%=text_indent%>px;"><b><%=pc.name%></b></a>
+                <%=find_all_subcategories(pc,text_indent)%>
+            <% end %>
         </li>
     </ul>
 </li>
