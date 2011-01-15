@@ -8,6 +8,7 @@
                     <tr>
                         <th>内容分类名</th>
                         <th>上级分类</th>
+                        <th>图片规格</th>
                         <th>备注</th>
                         <th width=80></th>
                     </tr>
@@ -17,6 +18,13 @@
                     <tr>
                         <td><%=panel_category.name%></td>
                         <td><%=panel_category.parent.nil? ? "无" : panel_category.parent.name%></td>
+                        <td>
+                            <%if panel_category.rq_image%>
+                                <%=panel_category.width%>x<%=panel_category.height%>
+                            <%else%>
+                                无图片
+                            <%end%>
+                        </td>
                         <td><%=panel_category.memo%></td>
                         <td>
                         <%= link_to "修改", edit_panel_category_url(panel_category)%>

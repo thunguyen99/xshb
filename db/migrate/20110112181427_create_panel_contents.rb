@@ -9,8 +9,8 @@ class CreatePanelContents < ActiveRecord::Migration
       t.integer :panel_category_id
       t.string :uploaded_data_file_name
       t.integer :uploaded_data_file_size
-      t.string :uploaded_data_height
-      t.string :uploaded_data_width
+      t.integer :uploaded_data_height
+      t.integer :uploaded_data_width
       t.datetime :uploaded_data_update_at
       t.string :uploaded_data_content_type
       t.timestamps
