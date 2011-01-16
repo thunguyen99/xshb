@@ -13,6 +13,10 @@
                         <th width=120>标题</th>
                         <th width=60>分类</th>
                         <th width=120>链接</th>
+                        <%pc=PanelCategory.find_by_name("最新鉴赏图片")%>
+                        <%if pc.id == params[:pcid].to_i%>
+                            <th width=60>鉴赏期数</th>
+                        <%end%>
                         <th width=60>排序权重</th>
                         <th width=150>简介</th>
                         <th width=80></th>
@@ -25,6 +29,9 @@
                         <td><%=panel_content.title%></td>
                         <td><%=panel_content.panel_category.nil? ? "" : panel_content.panel_category.name%></td>
                         <td><%=panel_content.link%></td>
+                        <%if pc.id == params[:pcid].to_i%>
+                            <td><%=panel_content.parent.nil? ? "无" : panel_content.parent.title%></td>
+                        <%end%>
                         <td><%=panel_content.weight%></td>
                         <td><%=panel_content.description%></td>
                         <td>
