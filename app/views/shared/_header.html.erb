@@ -7,7 +7,7 @@
         </span>
     <%else%>
         <% form_tag session_path,:name=>"login_form" do -%>
-        <span>用户名：</span>
+        <span>用户名／电子邮件：</span>
         <span><%= text_field_tag 'login', @login ,:class=>"input" %></span>
         <span>密码：</span>
         <span><%= password_field_tag 'password', nil ,:class=>"input" %></span>

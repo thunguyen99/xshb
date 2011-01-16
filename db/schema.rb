@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110114222216) do
+ActiveRecord::Schema.define(:version => 20110116174102) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -78,12 +78,13 @@ ActiveRecord::Schema.define(:version => 20110114222216) do
     t.integer  "panel_category_id"
     t.string   "uploaded_data_file_name"
     t.integer  "uploaded_data_file_size"
-    t.string   "uploaded_data_height"
-    t.string   "uploaded_data_width"
+    t.integer  "uploaded_data_height"
+    t.integer  "uploaded_data_width"
     t.datetime "uploaded_data_update_at"
     t.string   "uploaded_data_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "products", :force => true do |t|

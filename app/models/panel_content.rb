@@ -1,4 +1,5 @@
 class PanelContent < ActiveRecord::Base
+  acts_as_tree
   belongs_to :panel_category
 
   validates_presence_of :title,:panel_category_id
