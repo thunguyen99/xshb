@@ -170,7 +170,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd { margin:0px; padding:0px; list-s
 
 /*hide nav block temporarily*/
 /*.loginbar {display:none;}*/
-#reception2j {display:none;}
+#reception,#reception2j {display:none;}
 
 
 
