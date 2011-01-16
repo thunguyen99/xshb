@@ -23,14 +23,19 @@ $(function(){
 <!--左侧-->
 <div class="content_left">
     <!--跑马灯-->
+	<% pcs = PanelContent.list_contents("公告字幕") %>
+	<% unless pcs.blank? %>
     <div id="reception">
         <div class="news">
             <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-                <a href="#">最新消息最新消息最新消息最新消息最新消息最新消息最新消息最新消息</a>
+				<% pcs.each do |pc| %>
+	                <a href="<%= pc.link %>" target="_blank"><%= h pc.description %></a>
+				<% end %>
             </marquee>
         </div>
         <div id="closeb" > <a href="javascript:;" onclick="closereception();" title="关闭"><img src="/images/eyok05.jpg" /></a> </div>
     </div>
+	<% end %>
     <!--跑马灯结束-->
     <!--焦点图-->
     <div class="ff">

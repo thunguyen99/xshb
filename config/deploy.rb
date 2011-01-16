@@ -81,14 +81,13 @@ namespace :deploy do
     database_yml
     thin_yml
     app_config
+    asset_packager
   end
 
   # add soft link script for deploy
   desc "Symlink the directories"
   after "deploy:symlink", :roles => [:web] do
     ## create link for shared assets
-    # run "#{shared_path}/script/relink.sh /usr/local/webservice/htdocs/assets #{release_path}/assets #{previous_release} #{release_name} assets"
-
     run "ln -nfs #{deploy_to}/#{shared_dir}/assets #{deploy_to}/#{current_dir}/public/images/assets"
 
     # backup_db
@@ -105,6 +104,13 @@ namespace :deploy do
   task :database_yml, :roles => [:web] do
     db_config = "#{shared_path}/config/database.yml.production"
     run "cp #{db_config} #{release_path}/config/database.yml"
+  end
+  
+  desc "Create asset packages for production, minify and compress js and css files"
+  task :asset_packager, :roles => [:web] do
+    run <<-EOF
+    cd #{release_path} && rake RAILS_ENV=production asset:packager:build_all
+    EOF
   end
 
   desc "Generate Production thin.yml"
