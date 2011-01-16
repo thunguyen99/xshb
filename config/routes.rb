@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :panel_categories
 
-  map.resources :panel_contents
+  map.resources :panel_contents,:member => {:croper => :get,:crop => :put}
 
   map.resources :order_line_items,:member => {:update_quantity => :post}
 

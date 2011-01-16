@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   access_control do
     allow :admin
     action :show do
-      allow :member
+      allow all
     end
   end
 
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     if @article.save
-      redirect_to "/articles"
+      redirect_to "/articles?cid=#{@article.category.id}"
       flash[:notice] = "文章#{@article.title}添加成功"
     else
       flash[:error]  = "添加失败，请重新尝试"
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update_attributes(params[:article])
       flash[:notice] = "#{@article.title} 修改成功"
-      redirect_to "/articles"
+      redirect_to "/articles?cid=#{@article.category.id}"
     else
       flash[:error] = "#{@article.title} 修改失败"
       render :action => "edit"
@@ -60,6 +60,6 @@ class ArticlesController < ApplicationController
     else
       flash[:error] = "发生未知错误，请联系管理员"
     end
-    redirect_to "/articles"
+    redirect_to "/articles?cid=#{@article.category.id}"
   end
 end

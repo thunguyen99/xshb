@@ -32,18 +32,20 @@
                     <%=f.file_field :uploaded_data%>
                 </p>
                 <p>
-                    <label>已传图片</label>
+
                     <%if @panel_content.uploaded_data.url.blank?%>
+                    <label>已传图片</label>
                         暂未上传
                     <%else%>
-                        <%=image_tag (@panel_content.uploaded_data.url)%>
+                    <label>已传图片 (点击裁剪)</label>
+                        <a href="/panel_contents/<%=@panel_content.id%>/croper"><%=image_tag (@panel_content.uploaded_data.url),:width=>"#{@panel_content.uploaded_data_width > 500 ? 500 : @panel_content.uploaded_data_width}"%></a>
                     <%end%>
                 </p>
                 <p>
                     <%=f.label :description,"简介："%>
                     <%=f.text_area :description,:rows=>5%>
                 </p>
-                <p style="text-align:center;"><%=f.submit "保存"%></p>
+                <p style="margin-left:300px;"><%=f.submit "保存"%></p>
             </div>
             <%end%>
         </div>

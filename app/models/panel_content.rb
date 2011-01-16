@@ -25,6 +25,17 @@ class PanelContent < ActiveRecord::Base
     :less_than => 5.megabyte, #another option is :greater_than
     :message => "上传文件小于5M"
 
+  after_post_process :find_dimensions
+
+  def find_dimensions
+    temporary = uploaded_data.queued_for_write[:original]
+    filename = temporary.path unless temporary.nil?
+    filename = uploaded_data.path if filename.blank?
+    geometry = Paperclip::Geometry.from_file(filename)
+    self.uploaded_data_width  = geometry.width
+    self.uploaded_data_height = geometry.height
+  end
+
   def show_status
     if self.is_published
       "<img src='/images/published.gif' />"
