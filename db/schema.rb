@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110116174102) do
+ActiveRecord::Schema.define(:version => 20110117071600) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -196,6 +196,7 @@ ActiveRecord::Schema.define(:version => 20110116174102) do
     t.boolean  "rq_image",   :default => false
     t.integer  "width",      :default => 0
     t.integer  "height",     :default => 0
+    t.integer  "weight",     :default => 0,     :null => false
   end
 
   create_table "panel_contents", :force => true do |t|
@@ -207,8 +208,8 @@ ActiveRecord::Schema.define(:version => 20110116174102) do
     t.integer  "panel_category_id"
     t.string   "uploaded_data_file_name"
     t.integer  "uploaded_data_file_size"
-    t.integer  "uploaded_data_height"
-    t.integer  "uploaded_data_width"
+    t.string   "uploaded_data_height"
+    t.string   "uploaded_data_width"
     t.datetime "uploaded_data_update_at"
     t.string   "uploaded_data_content_type"
     t.datetime "created_at"
