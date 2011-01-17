@@ -7,6 +7,25 @@
 <%= javascript_include_merged 'base' %>
 
 <%= yield :header %>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20722833-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<% if flsah_message == "注册成功" %>
+	<script type="text/javascript" charset="utf-8">
+		_gaq.push(['_trackPageview', 'SignUpSuccess']);
+	</script>
+<% end %>
 </head>
 <body>
 <div class="enjoyoungok">
@@ -28,18 +47,5 @@
         <%= render :partial => 'shared/footer' %>
     <!--底部结束-->
 </div>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-20722833-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body>
 </html>

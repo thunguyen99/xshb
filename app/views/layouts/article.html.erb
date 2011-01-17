@@ -4,11 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>星尚画报</title>
 <link href="/stylesheets/ifram.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<div class="news1">
-    <%=yield%>
-</div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -22,5 +17,15 @@
   })();
 
 </script>
+<% if flsah_message == "注册成功" %>
+	<script type="text/javascript" charset="utf-8">
+		_gaq.push(['_trackPageview', 'SignUpSuccess']);
+	</script>
+<% end %>
+</head>
+<body>
+<div class="news1">
+    <%=yield%>
+</div>
 </body>
 </html>
