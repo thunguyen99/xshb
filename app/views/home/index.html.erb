@@ -44,6 +44,7 @@ $(function(){
             <%pcs = PanelContent.list_contents("焦点图",4)%>
             <%pcs.each do |pc|%>
             <a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" alt="<%=pc.title%>" width="662" height="313" /></a>
+			<span style="color:white;"> | </span>
             <%end%>
         </div>
 
