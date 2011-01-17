@@ -1,12 +1,10 @@
 class PanelCategory < ActiveRecord::Base
-  acts_as_tree :order => "name"
+  acts_as_tree :order => "weight desc"
   has_many :panel_contents
 
   validates_presence_of :name
 
-  named_scope :no_parent, lambda {|parent_id|
-        {:conditions => ["panel_categories.parent_id is null"]}
-  }
+  named_scope :root, :conditions => {:parent_id => nil}
 
   def find_all_subcategory_ids(ids=[])
     if self.children.size > 0

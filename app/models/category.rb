@@ -4,9 +4,7 @@ class Category < ActiveRecord::Base
 
   validates_presence_of :name
 
-  named_scope :no_parent, lambda {|parent_id|
-        {:conditions => ["categories.parent_id is null"]}
-  }
+  named_scope :no_parent, :conditions => {:parent_id => nil}
 
   def find_all_subcategory_ids(ids=[])
     if self.children.size > 0

@@ -31,7 +31,7 @@
     </span>
     <ul style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
         <li>
-            <% PanelCategory.no_parent(true).all.each do |pc| %>
+            <% PanelCategory.root.first.children.each do |pc| %>
                 <% text_indent = 20%>
                 <a href="/panel_contents?pcid=<%=pc.id%>" style="text-indent:<%=text_indent%>px;"><b><%=pc.name%></b></a>
                 <%=find_all_subcategories(pc,text_indent)%>
