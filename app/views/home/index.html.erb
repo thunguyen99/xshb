@@ -29,7 +29,7 @@ $(function(){
         <div class="news">
             <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
 				<% pcs.each do |pc| %>
-	                <a href="<%= pc.link %>" target="_blank"><%= h pc.description %></a>
+	                <a href="<%= pc.link %>" target="_blank"><%= h pc.description %></a><span style="color:white;"> | </span>
 				<% end %>
             </marquee>
         </div>
