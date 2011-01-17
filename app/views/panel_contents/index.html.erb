@@ -18,7 +18,6 @@
                             <th width=60>鉴赏期数</th>
                         <%end%>
                         <th width=60>排序权重</th>
-                        <th width=150>简介</th>
                         <th width=80></th>
                     </tr>
                 </tbody>
@@ -33,7 +32,6 @@
                             <td><%=panel_content.parent.nil? ? "无" : panel_content.parent.title%></td>
                         <%end%>
                         <td><%=panel_content.weight%></td>
-                        <td><%=panel_content.description%></td>
                         <td>
                         <%= link_to "修改", edit_panel_content_url(panel_content)%>
                         <%= link_to "删除", panel_content_url(panel_content), :method => :delete, :confirm => "确认要删除这个内容吗?"%>
