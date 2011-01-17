@@ -26,7 +26,7 @@
                     <%if params[:pcid].to_i == pc2.id%>
                         <p>
                             <%=f.label :parent_id,"鉴赏期数"%>
-                            <%=f.select :parent_id, pc1.panel_contents.collect{|p| [p.title, p.id]}%>
+                            <%=f.select :parent_id, pc1.panel_contents.published.all(:order => "id desc").collect{|p| [p.title, p.id]}%>
                         </p>
                     <%end%>
                 <%end%>
