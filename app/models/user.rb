@@ -64,6 +64,14 @@ class User < ActiveRecord::Base
     UserMailer.deliver_forgot_password(self)
   end
 
+  def role_names(join="<br/>")
+    arr = []
+    self.roles.each do |role|
+      arr << role.name
+    end
+    arr.join("#{join}")
+  end
+
 protected
 
   def add_role

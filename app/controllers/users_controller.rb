@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
+  before_filter :login_required,:only=>[:index]
 
-  # render new.rhtml
+  access_control do
+    allow :admin
+    action :new, :check_un, :check_email, :create, :forgot_password, :forgot, :reset_password, :reset do
+      allow all
+    end
+  end
+
+  def index
+    @users = User.paginate(:all,:per_page=>20,:page => params[:page], :order => 'users.created_at DESC')
+  end
+
   def new
     @user = User.new
   end
@@ -91,6 +102,19 @@ class UsersController < ApplicationController
       flash[:error]  = '对不起，您的密码重置码不正确，请检查后重试。'
       redirect_to "/forgot_password"
     end
+  end
+
+  def edit_role
+    @user = User.find(params[:id])
+  end
+
+  def update_role
+    @user = User.find(params[:id])
+    role = Role.find(params[:roles])
+    @user.roles.delete_all
+    @user.roles << role
+    flash[:notice] = "权限修改成功"
+    redirect_to users_path
   end
 
 end
