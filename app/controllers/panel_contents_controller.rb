@@ -9,7 +9,7 @@ class PanelContentsController < ApplicationController
     panel_content = PanelContent
     unless params[:pcid].blank?
       pc = PanelCategory.find(params[:pcid])
-      # don't show all subcategories for tease category, might be migrated 
+      # don't show all subcategories for tease category, might be migrated
       # into db model later
       if params[:pcid] == PanelCategory.find_by_name("最新鉴赏").id.to_s
         panel_content = panel_content.in_category_id(pc.id)
@@ -20,7 +20,7 @@ class PanelContentsController < ApplicationController
     end
     @panel_contents = panel_content.paginate(:all,
                           :per_page   => 20,
-                          :page       => params[:page], 
+                          :page       => params[:page],
                           :order      => 'panel_contents.is_published DESC,panel_contents.weight DESC,
                                           panel_contents.created_at DESC')
   end
@@ -85,14 +85,16 @@ class PanelContentsController < ApplicationController
     y2 = params[:y2].to_i
     w = params[:w].to_i
     h = params[:h].to_i
+    to_w = @panel_content.panel_category.width
+    to_h = @panel_content.panel_category.height
     if w != 0 && h !=0
       url = "#{@panel_content.uploaded_data.path}"
       to_url = "#{@panel_content.uploaded_data.path}"
-      Paperclip.run("convert","-crop #{w}x#{h}+#{x1}+#{y1} #{url} #{to_url}")
+      Paperclip.run("convert","-crop #{w}x#{h}+#{x1}+#{y1} #{url} -resize #{to_w}x#{to_h} #{to_url}")
       filesize = File.size(to_url)
       @panel_content.update_attributes(:uploaded_data_file_size=>filesize,
-                                       :uploaded_data_width=>w,
-                                       :uploaded_data_height=>h)
+                                       :uploaded_data_width=>to_w,
+                                       :uploaded_data_height=>to_h)
       flash[:notice] = "图片裁剪成功"
       redirect_to "/panel_contents/#{@panel_content.id}/edit"
     else
