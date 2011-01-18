@@ -52,7 +52,15 @@ class OrdersController < ApplicationController
 
     case notification.status
     when "TRADE_SUCCESS"
-      @order.update_attribute(:status,1) if @order.status == 0
+      if @order.status == 0
+        @order.update_attribute(:status,1)
+
+        begin
+          deliver_success_order(@order)
+        rescue Timeout::Error => e
+        end
+
+      end
       render :text => "订单支付成功"
     else
       render :text => "订单支付失败"
@@ -64,6 +72,12 @@ class OrdersController < ApplicationController
     if r.success?
       @order = Order.find_by_oid(r.order)
       @order.update_attribute(:status,1)
+
+      begin
+        deliver_success_order(@order)
+      rescue Timeout::Error => e
+      end
+
       flash[:notice] = "您的订单支付成功"
       redirect_to "/my/#{@order.id}/order_show"
     else
@@ -74,6 +88,14 @@ class OrdersController < ApplicationController
 
   def show_order
     logger.info "show_order!!!"
+  end
+
+protected
+  def deliver_success_order(order)
+    role = Role.find_by_name("admin")
+    role.users.each do |user|
+      UserMailer.deliver_order_notice(user,order)
+    end
   end
 
 end
