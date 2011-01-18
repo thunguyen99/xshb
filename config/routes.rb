@@ -7,6 +7,10 @@ ActionController::Routing::Routes.draw do |map|
   map.check_email '/users/check_email', :controller => "users", :action => "check_email"
   map.subscription  '/subscription', :controller => "products", :action => "index"
   map.teaser    '/home/teaser/:id.:format', :controller => "home", :action => "teaser"
+  map.forgot_password'/forgot_password', :controller => 'users', :action => 'forgot_password'
+  map.forgot '/forgot', :controller => 'users', :action => 'forgot'
+  map.reset_password  '/reset_password/:password_reset_code', :controller => 'users', :action => 'reset_password'
+  map.reset  '/reset', :controller => 'users', :action => 'reset', :method => :put
 
   map.resources :users
 
@@ -30,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :my, :collection => {:orders => :get},
                      :member => {:order_show => :get}
-                     
+
   map.ws_teaser '/webservice/teaser_album/:id.:format', :controller => "webservice", :action => "teaser_album"
 
   # The priority is based upon order of creation: first created -> highest priority.

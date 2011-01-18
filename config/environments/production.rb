@@ -24,5 +24,23 @@ config.action_view.cache_template_loading            = true
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
 
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => "ok.enjoyoung.cn" }
+config.action_mailer.smtp_settings = {
+  :address => "mail.enjoyoung.cn",
+  :port => 25,
+  :domain => "mail.enjoyoung.cn",
+  :authentication => :login,
+  :user_name => "enjoyoung_mailer@enjoyoung.cn",
+  :password => "1q!2w@3e#",
+  :default_charset => "utf-8",
+  :default_content_type => "text/html; charset=utf-8"
+}
+
+config.action_mailer.perform_deliveries = true
+# Don't care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_charset = "utf-8"
+
 # Enable threaded mode
 # config.threadsafe!

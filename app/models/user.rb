@@ -58,6 +58,12 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
+  def forgot_password!
+    self.password_reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+    self.save
+    UserMailer.deliver_forgot_password(self)
+  end
+
 protected
 
   def add_role
