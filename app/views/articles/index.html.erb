@@ -20,7 +20,7 @@
                     <%@articles.each do |article|%>
                     <tr>
                         <td><%=article.show_status%></td>
-                        <td><%=article.title%></td>
+                        <td><%=article.title%><br />链接：<%= "/articles/#{article.id}" %></td>
                         <td><%=article.category.nil? ? "" : article.category.name%></td>
                         <td><%=article.issue_time.nil? ? "" : article.issue_time.to_date%></td>
                         <td>
