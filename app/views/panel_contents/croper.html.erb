@@ -93,7 +93,7 @@
 
     <% form_for @panel_content,:url => "/panel_contents/#{@panel_content.id}/crop",:html=>{:method=>:put} do |f| %>
     <div class="container main">
-        <div style="float: left; width: 60%;">
+        <div style="float: left;">
             <p class="instructions">
                 点击并且拖曳来选择区域.
             </p>
@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <div style="float: left; width: 40%;">
+        <div style="float: left; padding-left:10em;">
             <p style="font-size: 110%; font-weight: bold; padding-left: 0.1em;">
                 裁剪图预览
             </p>

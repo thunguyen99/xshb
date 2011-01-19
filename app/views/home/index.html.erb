@@ -23,19 +23,19 @@ $(function(){
 <!--左侧-->
 <div class="content_left">
     <!--跑马灯-->
-	<% pcs = PanelContent.list_contents("公告字幕") %>
-	<% unless pcs.blank? %>
+    <% pcs = PanelContent.list_contents("公告字幕") %>
+    <% unless pcs.blank? %>
     <div id="reception">
         <div class="news">
             <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-				<% pcs.each do |pc| %>
-	                <a href="<%= pc.link %>" target="_blank"><%= h pc.description %></a><span style="color:white;"> | </span>
-				<% end %>
+                <% pcs.each do |pc| %>
+                    <a href="<%= pc.link %>" target="_blank"><%= h pc.description %></a><span style="color:white;"> | </span>
+                <% end %>
             </marquee>
         </div>
         <div id="closeb" > <a href="javascript:;" onclick="closereception();" title="关闭"><img src="/images/eyok05.jpg" /></a> </div>
     </div>
-	<% end %>
+    <% end %>
     <!--跑马灯结束-->
     <!--焦点图-->
     <div class="ff">
@@ -44,7 +44,7 @@ $(function(){
             <%pcs = PanelContent.list_contents("焦点图",4)%>
             <%pcs.each do |pc|%>
             <a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" alt="<%=pc.title%>" width="662" height="313" /></a>
-			<span style="color:white;"> | </span>
+            <span style="color:white;"> | </span>
             <%end%>
         </div>
 
@@ -57,27 +57,12 @@ $(function(){
     <div class="hot">
         <div class="hot_01"></div>
         <div class="hot_02">
-            <%pcs = PanelContent.list_contents("本期精华-左",1)%>
+            <%pcs = PanelContent.list_contents("本期精华",3)%>
             <%pcs.each do |pc|%>
             <div class="hot_02content">
-                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">沟通</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
+                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
             </div>
             <%end%>
-
-            <%pcs = PanelContent.list_contents("本期精华-中",1)%>
-            <%pcs.each do |pc|%>
-            <div class="hot_02content">
-                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">传承</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
-            </div>
-            <%end%>
-
-            <%pcs = PanelContent.list_contents("本期精华-右",1)%>
-            <%pcs.each do |pc|%>
-            <div class="hot_02content">
-                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><b class="red">创新</b>-<%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
-            </div>
-            <%end%>
-
             <div class="blank0"></div>
         </div>
     </div>
