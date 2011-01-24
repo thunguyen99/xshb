@@ -134,8 +134,8 @@ $(function(){
     <%pcs.each do |pc|%>
     <div class="appreciate">
         <span><img src="/images/eyok14.jpg" /></span>
-        <span style="margin:10px;">
-            <a href="<%=pc.link%>"><%=image_tag (pc.uploaded_data.url)%></a>
+        <span style="margin:10px;text-align:center;">
+            <a href="<%=pc.link%>"><%=image_tag(pc.uploaded_data.url)%></a>
         </span>
     </div>
     <%end%>
