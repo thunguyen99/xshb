@@ -7,26 +7,27 @@ google.setOnLoadCallback(function() {
 var customSearchControl = new google.search.CustomSearchControl('008039657822625578505:60pqrtf_wbi');
 customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
 customSearchControl.draw('cse');
+customSearchControl.execute('<%=params[:q]%>');
 }, true);
 </script>
 <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 <style>
-form.gsc-search-box {
-	width: 185px;
-	margin-left: 684px;
-	position: absolute;
-	z-index: 1;
-	top: -39px;
-}
 input.gsc-input {
-	width: 163px;
+	width: 165px !important;
+	height: 19px !important;
 	background: white !important;
+	position: absolute;
+	top: -38px;
+	right: 125px;
 }
 input.gsc-search-button {
-	width: 48px;
-	height: 21px;
+	width: 50px !important;
+	height: 23px !important;
 	text-indent: -1000px;
-	background: url("/images/eyok02.jpg") !important;
+	background: url(/images/eyok02.jpg) no-repeat !important;
+	position: absolute;
+	top: -39px;
+	right: 72px;
 }
 .gsc-clear-button {
 	display: none;
