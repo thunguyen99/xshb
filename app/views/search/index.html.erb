@@ -1,0 +1,34 @@
+<div id="cse" style="position:relative;">loading...</div>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1', {language : 'zh-CN'});
+google.setOnLoadCallback(function() {
+var customSearchControl = new google.search.CustomSearchControl('008039657822625578505:60pqrtf_wbi');
+customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+customSearchControl.draw('cse');
+}, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+<style>
+form.gsc-search-box {
+	width: 185px;
+	margin-left: 684px;
+	position: absolute;
+	z-index: 1;
+	top: -39px;
+}
+input.gsc-input {
+	width: 163px;
+	background: white !important;
+}
+input.gsc-search-button {
+	width: 48px;
+	height: 21px;
+	text-indent: -1000px;
+	background: url("/images/eyok02.jpg") !important;
+}
+.gsc-clear-button {
+	display: none;
+}
+</style>

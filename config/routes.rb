@@ -35,6 +35,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :my, :collection => {:orders => :get},
                      :member => {:order_show => :get}
 
+  map.resources :search
+
   map.ws_teaser '/webservice/teaser_album/:id.:format', :controller => "webservice", :action => "teaser_album"
 
   # The priority is based upon order of creation: first created -> highest priority.
