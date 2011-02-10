@@ -5,7 +5,7 @@
 <title>星尚画报</title>
 <%= stylesheet_link_merged 'base' %>
 <%= javascript_include_merged 'base' %>
-
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <%= yield :header %>
 
 <script type="text/javascript">
@@ -47,5 +47,6 @@
         <%= render :partial => 'shared/footer' %>
     <!--底部结束-->
 </div>
+<%= yield :footer %>
 </body>
 </html>

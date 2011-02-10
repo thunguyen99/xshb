@@ -315,3 +315,7 @@ form span.red {color:red;background:none;line-height:0;}
 .gfont_01:hover { font-size:24px; font-weight:bold; color:#FFF;}
 .gfont_02 { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
 .gfont_02:hover { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
+
+.cse form.gsc-search-box, form.gsc-search-box {padding:0px !important;}
+.gsc-adBlock,.gsc-adBlockVertical {display:none !important;}
+.gsc-thinWrapper {width:96% !important;}

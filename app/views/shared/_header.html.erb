@@ -23,12 +23,34 @@
 <!--导航tiao-->
 <div class="oknav">
     <div class="oknav_a1"><a href="/" class="current">首 页</a><a href="#">天 下</a><a href="#">商 业</a><a href="#">文 化</a><a href="#">设 计</a><a href="#">精 英</a><a href="#">时 尚</a><a href="#">指 南</a></div>
-    <div class="oknav_a2"><span >
-        <input name="input" type="text" size="22" />
-    </span><span><a href="#"><img src="/images/eyok02.jpg" /></a></span><span><a href="/subscription" target="_blank"><img src="/images/eyok03.jpg" /></a></span>
+    <div class="oknav_a2">
+        <span id="cse-search-form" style="width: 200px;">Loading</span>
+		
+    <span><a href="/subscription" target="_blank"><img src="/images/eyok03.jpg" /></a></span>
     <div class="blank0"></div>
 </div>
 <div class="blank0"></div>
 </div>
 <!--导航结束-->
 </div>
+
+<% content_for :footer do -%>
+	
+	<script type="text/javascript">
+		if (typeof(cse_inited) == 'undefined') {
+	  google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.ESPRESSO});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('013607932426121157928:s0exwfoj8sw');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    var options = new google.search.DrawOptions();
+	    options.setSearchFormRoot('cse-search-form');
+	    customSearchControl.draw('cse', options);
+		if ($('#cse').length == 0) {
+			$('#cse-search-form .gsc-search-button input').each(function(){
+				$(this).click(function(){document.location.href='/search?q='+$('.gsc-input input').val();});
+			});
+		}
+	  }, true);
+	}
+	</script>
+<% end -%>
