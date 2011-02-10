@@ -316,6 +316,27 @@ form span.red {color:red;background:none;line-height:0;}
 .gfont_02 { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
 .gfont_02:hover { font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
 
+/*cse related*/
 .cse form.gsc-search-box, form.gsc-search-box {padding:0px !important;}
 .gsc-adBlock,.gsc-adBlockVertical {display:none !important;}
 .gsc-thinWrapper {width:96% !important;}
+input.gsc-input {
+	width: 165px !important;
+	height: 19px !important;
+	background: white !important;
+	position: absolute;
+	top: -38px;
+	right: 125px;
+}
+input.gsc-search-button {
+	width: 50px !important;
+	height: 23px !important;
+	text-indent: -1000px;
+	background: url(/images/eyok02.jpg) no-repeat !important;
+	position: absolute;
+	top: -39px;
+	right: 72px;
+}
+.gsc-clear-button {
+	display: none;
+}
