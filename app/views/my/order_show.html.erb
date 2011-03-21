@@ -11,7 +11,12 @@
                     <tbody>
                         <tr>
                             <td><h4>订单编号：<%=@order.oid%></h4></td> <td>下单日期：<%=@order.created_at.to_s(:db)%></td>
-                            <td>状态：<%=@order.show_status%></td>
+                            <td>
+                                状态：<%=@order.show_status%>
+                                <%if current_user.has_role?("admin") && @order.status == 1%>
+                                <br /><%=link_to "标记为已处理","/orders/#{@order.id}/mark",:confirm=>"确认要把此订单标记为已处理吗？",:style=>"color:#FE6C00;"%>
+                                <%end%>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

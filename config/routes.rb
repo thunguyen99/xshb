@@ -31,7 +31,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :order_line_items,:member => {:update_quantity => :post}
 
-  map.resources :orders,:collection => {:notify => :get,:done => :get,:show_order => :get}
+  map.resources :orders,:member => {:mark => :get},
+                        :collection => {:notify => :get,:done => :get,:show_order => :get}
 
   map.resources :my, :collection => {:orders => :get},
                      :member => {:order_show => :get}

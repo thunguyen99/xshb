@@ -11,8 +11,10 @@ class Order < ActiveRecord::Base
   def show_status
     if self.status == 0
       "<b style='color:red;'>待付款</b>"
-    else self.status == 1
-      "<b style='color:green;'>已付款</b>"
+    elsif self.status == 1
+      "<b style='color:yellow;'>已付款未处理</b>"
+    elsif self.status == 2
+      "<b style='color:green;'>已付款已处理</b>"
     end
   end
 

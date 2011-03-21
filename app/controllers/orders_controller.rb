@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :login_required, :only => [:new, :create,:show]
+  before_filter :login_required, :only => [:new, :create,:show,:mark]
   skip_before_filter :verify_authenticity_token,:only => [:notify]
 
   def new
@@ -88,6 +88,16 @@ class OrdersController < ApplicationController
 
   def show_order
     logger.info "show_order!!!"
+  end
+
+  def mark
+    @order = Order.find(params[:id])
+    if current_user.has_role?("admin") && @order.status == 1
+      @order.update_attribute(:status,2)
+      redirect_to "/my/#{@order.id}/order_show"
+    else
+      render :text => "对不起，您不能标记此订单！"
+    end
   end
 
 protected
