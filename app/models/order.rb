@@ -12,7 +12,7 @@ class Order < ActiveRecord::Base
     if self.status == 0
       "<b style='color:red;'>待付款</b>"
     elsif self.status == 1
-      "<b style='color:yellow;'>已付款未处理</b>"
+      "<b style='color:blue;'>已付款未处理</b>"
     elsif self.status == 2
       "<b style='color:green;'>已付款已处理</b>"
     end
