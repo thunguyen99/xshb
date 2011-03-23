@@ -22,16 +22,18 @@
                                             <%=f.text_field :receiver_name%>
                                         </td>
                                     </tr>
-									<tr>
-										<td>
-											<em style="color: red;">*</em>收货地址：
-										</td>
-										<td>
-											<%=f.text_field :address%>
-										</td>
-										<td> 邮编： <%=f.text_field :zip_code,:class=>"span-2"%>
-										</td>
-									</tr>
+                                    <tr>
+                                        <td>
+                                            <em style="color: red;">*</em>收货地址：
+                                        </td>
+                                        <td>
+                                            <%=f.text_field :address%>
+                                             <br /><b style="color: red;">注：请填写详细收货地址，以免收不到杂志</b>
+                                        </td>
+                                        <td>
+                                            <em style="color: red;">*</em>邮编： <%=f.text_field :zip_code,:class=>"span-2"%>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <em style="color: red;">*</em>手机：
@@ -181,12 +183,16 @@
 
 <script type="text/javascript" charset="utf-8">
     function check(){
+        if($("#order_receiver_name").val() == ""){
+            alert("请填写收货人姓名");
+            return false;
+        }
         if($("#order_address").val() == ""){
             alert("请填写收货地址");
             return false;
         }
-        if($("#order_receiver_name").val() == ""){
-            alert("请填写收货人姓名");
+        if($("#order_zip_code").val() == ""){
+            alert("请填写邮编");
             return false;
         }
         if($("#order_mobile").val() == ""){
