@@ -19,6 +19,10 @@
                     <%=f.label :link,"链接地址"%>
                     <%=f.text_field :link,:size=>40%>
                 </p>
+                <p>
+                    <%=f.label :target_type,"打开方式"%>
+                    <%=f.select :target_type,[["默认方式",0],["新窗口",1]]%>
+                </p>
 
                 <%pc1=PanelCategory.find_by_name("最新鉴赏")%>
                 <%if !pc1.nil?%>

@@ -49,4 +49,12 @@ class PanelContent < ActiveRecord::Base
     self.in_category_name(category).published.all(:order=>"panel_contents.weight DESC,panel_contents.created_at DESC",:limit=>limit)
   end
 
+  def target
+    if self.target_type == 0
+      " target='_blank' "
+    else
+      " class='thickbox' "
+    end
+  end
+
 end

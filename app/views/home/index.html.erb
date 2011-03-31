@@ -94,13 +94,13 @@ $(function(){
             <%pcs.each do |pc|%>
             <div class="hot_02content">
                 <span class="span_imgbg">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/okvideo.jpg" /></a>
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" <%=pc.target%>><img src="/images/okvideo.jpg" /></a>
                 </span>
                 <span class="span_title">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">新刊预告</a>
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" <%=pc.target%>>新刊预告</a>
                 </span>
                 <span class="span_content">
-                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
+                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" <%=pc.target%>><%=pc.description%></a></p>
                 </span>
             </div>
             <%end%>
@@ -127,10 +127,10 @@ $(function(){
             <%pcs.each do |pc|%>
             <div class="hot_02content">
                 <span class="span_imgbg">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/oknews.jpg" /></a>
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a>
                 </span>
                 <span class="span_title">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">新闻动态</a>
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><%=pc.title%></a>
                 </span>
                 <span class="span_content">
                     <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
