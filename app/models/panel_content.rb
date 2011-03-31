@@ -50,7 +50,7 @@ class PanelContent < ActiveRecord::Base
   end
 
   def target
-    if self.target_type == 0
+    if self.target_type == 1
       " target='_blank' "
     else
       " class='thickbox' "
