@@ -21,6 +21,10 @@
                     <%= f.check_box :is_published %>
                 </p>
                 <p>
+                    <%=f.label :memo ,"简短描述"%>
+                    <%= f.text_area :memo,:rows=>4%>
+                </p>
+                <p>
                     <%=f.label :issue_time ,"发布时间"%>
                     <%= f.date_select(:issue_time)%>
                 </p>

@@ -105,19 +105,22 @@ $(function(){
             </div>
             <%end%>
 
-            <%pcs = PanelContent.list_contents("读者俱乐部",1)%>
-            <%pcs.each do |pc|%>
-            <div class="hot_02content">
-                <span class="span_imgbg">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/okclub.jpg" /></a>
-                </span>
-                <span class="span_title">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">读者俱乐部</a>
-                </span>
-                <span class="span_content">
-                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
-                </span>
-            </div>
+            <%category = Category.find_by_name("读者俱乐部")%>
+            <%unless category.nil?%>
+                <%article = category.articles.first(:order=>"created_at DESC")%>
+                <%unless article.nil?%>
+                <div class="hot_02content">
+                    <span class="span_imgbg">
+                        <a href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/okclub.jpg" /></a>
+                    </span>
+                    <span class="span_title">
+                        <a href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">读者俱乐部</a>
+                    </span>
+                    <span class="span_content">
+                        <p><a style="color:#6d6d6d" href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=article.memo%></a></p>
+                    </span>
+                </div>
+                <%end%>
             <%end%>
 
             <%pcs = PanelContent.list_contents("本期精华",1)%>
