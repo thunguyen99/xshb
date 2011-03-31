@@ -76,7 +76,7 @@ $(function(){
         <div id="KinSlideshow" style="visibility:hidden;">
             <%pcs = PanelContent.list_contents("焦点图",4)%>
             <%pcs.each do |pc|%>
-            <a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" alt="<%=pc.title%>" width="662" height="313" /></a>
+            <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" alt="<%=pc.title%>" width="662" height="313" /></a>
             <span style="color:white;"> | </span>
             <%end%>
         </div>
@@ -90,10 +90,48 @@ $(function(){
     <div class="hot">
         <div class="hot_01"></div>
         <div class="hot_02">
-            <%pcs = PanelContent.list_contents("本期精华",3)%>
+            <%pcs = PanelContent.list_contents("新刊预告",1)%>
             <%pcs.each do |pc|%>
             <div class="hot_02content">
-                <span class="span_imgbg"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a></span><span class="span_title"><a href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" class="thickbox"><%=pc.title%></a></span><span class="span_content"><p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&amp;TB_iframe=true&amp;height=580&amp;width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p></span>
+                <span class="span_imgbg">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/okvideo.jpg" /></a>
+                </span>
+                <span class="span_title">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">新刊预告</a>
+                </span>
+                <span class="span_content">
+                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
+                </span>
+            </div>
+            <%end%>
+
+            <%pcs = PanelContent.list_contents("读者俱乐部",1)%>
+            <%pcs.each do |pc|%>
+            <div class="hot_02content">
+                <span class="span_imgbg">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/okclub.jpg" /></a>
+                </span>
+                <span class="span_title">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">读者俱乐部</a>
+                </span>
+                <span class="span_content">
+                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
+                </span>
+            </div>
+            <%end%>
+
+            <%pcs = PanelContent.list_contents("本期精华",1)%>
+            <%pcs.each do |pc|%>
+            <div class="hot_02content">
+                <span class="span_imgbg">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/oknews.jpg" /></a>
+                </span>
+                <span class="span_title">
+                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox">新闻动态</a>
+                </span>
+                <span class="span_content">
+                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
+                </span>
             </div>
             <%end%>
             <div class="blank0"></div>
@@ -172,20 +210,22 @@ $(function(){
     <!--小广告结束-->
 
     <!--在线调查-->
-    <%pcs = PanelContent.list_contents("在线投票",1)%>
-    <%pcs.each do |pc|%>
-    <div><img src="/images/eyok23.jpg" />
-        <div class="questions">
-            <div class="questionscontent">
-                <ul>
-                    <li><strong><a href="<%=pc.link%>" target="_blank"><%=pc.description%></a></strong></li>
-                </ul>
-            </div>
-            <div class="questionsbottom"><a href="<%=pc.link%>" target="_blank"><img src="/images/eyok21.jpg" /></a><a href="#" style="display:none;"><img src="/images/eyok24.jpg" /></a>
-                <div class="blank0"></div>
+    <%if false%>
+        <%pcs = PanelContent.list_contents("在线投票",1)%>
+        <%pcs.each do |pc|%>
+        <div><img src="/images/eyok23.jpg" />
+            <div class="questions">
+                <div class="questionscontent">
+                    <ul>
+                        <li><strong><a href="<%=pc.link%>" target="_blank"><%=pc.description%></a></strong></li>
+                    </ul>
+                </div>
+                <div class="questionsbottom"><a href="<%=pc.link%>" target="_blank"><img src="/images/eyok21.jpg" /></a><a href="#" style="display:none;"><img src="/images/eyok24.jpg" /></a>
+                    <div class="blank0"></div>
+                </div>
             </div>
         </div>
-    </div>
+        <%end%>
     <%end%>
     <!--在线调查结束-->
 </div>
