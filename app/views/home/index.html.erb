@@ -123,17 +123,21 @@ $(function(){
                 <%end%>
             <%end%>
 
-            <%pcs = PanelContent.list_contents("本期精华",1)%>
-            <%pcs.each do |pc|%>
+            <%if category.nil?%>
+                <%article = Article.last%>
+            <%else%>
+                <%article = Article.last(:conditions=>["category_id != ?",category.id])%>
+            <%end%>
+            <%unless article.nil?%>
             <div class="hot_02content">
                 <span class="span_imgbg">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="<%=pc.uploaded_data.url%>" /></a>
+                    <a href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><img src="/images/oknews.jpg" /></a>
                 </span>
                 <span class="span_title">
-                    <a href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><%=pc.title%></a>
+                    <a href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" class="thickbox"><%=article.title%></a>
                 </span>
                 <span class="span_content">
-                    <p><a style="color:#6d6d6d" href="<%=pc.link%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=pc.description%></a></p>
+                    <p><a style="color:#6d6d6d" href="/articles/<%=article.id%>?keepThis=true&TB_iframe=true&height=580&width=640" title="新闻内容" class="thickbox"><%=article.memo%></a></p>
                 </span>
             </div>
             <%end%>
