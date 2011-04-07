@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required,:except => [:show]
 
   access_control do
     allow :admin
+    action :show do
+      allow all
+    end
   end
 
   def index
@@ -26,6 +29,11 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @articles = @category.articles.published.paginate(:all,:per_page=>5,:page => params[:page],:order=>"issue_time DESC")
   end
 
   def update
