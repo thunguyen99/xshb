@@ -23,22 +23,37 @@
 <!--导航tiao-->
 <div class="oknav">
     <div class="oknav_a1">
-        <a href="/" class="current">首 页</a>
-        <a href="#">天 下</a>
-        <a href="#">商 业</a>
-        <a href="#">文 化</a>
-        <a href="#">设 计</a>
-        <a href="#">精 英</a>
-        <a href="#">时 尚</a>
-        <a href="#">指 南</a>
+        <% current_link = "/" %>
+        <% if controller_name == "categories" && action_name == "show" %>
+            <% if params[:id] == "1" %>
+                <% current_link = "link_1" %>
+            <% elsif params[:id] == "2" %>
+                <% current_link = "link_2" %>
+            <% elsif params[:id] == "3" %>
+                <% current_link = "link_3" %>
+            <% elsif params[:id] == "4" %>
+                <% current_link = "link_4" %>
+            <% elsif params[:id] == "5" %>
+                <% current_link = "link_5" %>
+            <% elsif params[:id] == "6" %>
+                <% current_link = "link_6" %>
+            <% end %>
+        <% end %>
+        <a href="/" <%= current_link=="/" ? "class='current'" : "" %>>首 页</a>
+        <a href="/categories/1" <%= current_link=="link_1" ? "class='current'" : "" %>>天 下</a>
+        <a href="/categories/2" <%= current_link=="link_2" ? "class='current'" : "" %>>商 业</a>
+        <a href="/categories/3" <%= current_link=="link_3" ? "class='current'" : "" %>>文 化</a>
+        <a href="/categories/4" <%= current_link=="link_4" ? "class='current'" : "" %>>设 计</a>
+        <a href="/categories/5" <%= current_link=="link_5" ? "class='current'" : "" %>>精 英</a>
+        <a href="/categories/6" <%= current_link=="link_6" ? "class='current'" : "" %>>时 尚</a>
     </div>
-	
+
     <div class="oknav_a2">
-	<form id="search_frm" action="/search" method="get" accept-charset="utf-8">
-	    <span><input name="q" type="search" size="22" id="search_input" /></span>
-	    <span><a href="#" onclick="$('#search_frm').submit();"><img src="/images/eyok02.jpg" /></a></span>
-	</form>
-    
+    <form id="search_frm" action="/search" method="get" accept-charset="utf-8">
+        <span><input name="q" type="search" size="22" id="search_input" /></span>
+        <span><a href="#" onclick="$('#search_frm').submit();"><img src="/images/eyok02.jpg" /></a></span>
+    </form>
+
     <span><a href="/subscription" target="_blank"><img src="/images/eyok03.jpg" /></a></span>
     <div class="blank0"></div>
 </div>

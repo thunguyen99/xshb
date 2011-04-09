@@ -321,22 +321,47 @@ form span.red {color:red;background:none;line-height:0;}
 .gsc-adBlock,.gsc-adBlockVertical {display:none !important;}
 .gsc-thinWrapper {width:96% !important;}
 input.gsc-input {
-	width: 165px !important;
-	height: 19px !important;
-	background: white !important;
-	position: absolute;
-	top: -38px;
-	right: 125px;
+    width: 165px !important;
+    height: 19px !important;
+    background: white !important;
+    position: absolute;
+    top: -38px;
+    right: 125px;
 }
 input.gsc-search-button {
-	width: 50px !important;
-	height: 23px !important;
-	text-indent: -1000px;
-	background: url(/images/eyok02.jpg) no-repeat !important;
-	position: absolute;
-	top: -39px;
-	right: 72px;
+    width: 50px !important;
+    height: 23px !important;
+    text-indent: -1000px;
+    background: url(/images/eyok02.jpg) no-repeat !important;
+    position: absolute;
+    top: -39px;
+    right: 72px;
 }
 .gsc-clear-button {
-	display: none;
+    display: none;
+}
+
+/*article category*/
+#article_category {
+    padding: 2%;
+    font-size: 14px;
+}
+#article_category .ac_result {
+    margin-bottom: 6px;
+    padding: 6px;
+}
+#article_category .ac_title {
+    height: 1.4em;
+}
+#article_category .ac_title a{
+    color: #950000;
+}
+#article_category .ac_content {
+    padding-left: 15px;
+}
+#article_category .ac_footer {
+    color: #A25B08;
+    font-size: 12px;
+    padding-left: 15px;
+    margin-top: 3px;
 }
