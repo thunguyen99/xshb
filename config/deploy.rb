@@ -58,23 +58,23 @@ role :db,  domain, :primary => true
 # end
 
 # 不用mongrel，改用thin运行本应用
-# ## Add mongrel cluster support ##
-# require 'mongrel_cluster/recipes'
-# set :mongrel_conf, "#{shared_path}/config/mongrel_cluster.yml"
-# set :mongrel_user, "mongrel"
+## Add mongrel cluster support ##
+require 'mongrel_cluster/recipes'
+set :mongrel_conf, "#{shared_path}/config/mongrel_cluster.yml"
+set :mongrel_user, "mongrel"
 
 
 # add misc task here
 namespace :deploy do
 
   # 覆盖capistrano默认行为，添加thin的启动停止命令
-  desc "用应用下的config/thin.yml用thin启动应用"
-  %w(start stop restart).each do |action|
-    desc "#{action} the Thin processes"
-    task action.to_sym do
-      find_and_execute_task("thin:#{action}")
-    end
-  end
+  # desc "用应用下的config/thin.yml用thin启动应用"
+  # %w(start stop restart).each do |action|
+  #   desc "#{action} the Thin processes"
+  #   task action.to_sym do
+  #     find_and_execute_task("thin:#{action}")
+  #   end
+  # end
 
   desc "Generate database.yml and Create asset packages for production, minify and compress js and css files"
   after "deploy:update_code", :roles => [:web] do
