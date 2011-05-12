@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331082905) do
+ActiveRecord::Schema.define(:version => 20110512160416) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "title"
+    t.text     "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -20,6 +27,21 @@ ActiveRecord::Schema.define(:version => 20110331082905) do
     t.datetime "updated_at"
     t.datetime "issue_time"
     t.text     "memo"
+  end
+
+  create_table "assets", :force => true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "photo_content_type"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.string   "name"
+    t.text     "memo"
+    t.integer  "photo_type",         :default => 0
+    t.integer  "weight",             :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", :force => true do |t|

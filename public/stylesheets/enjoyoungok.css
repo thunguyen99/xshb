@@ -365,3 +365,29 @@ input.gsc-search-button {
     padding-left: 15px;
     margin-top: 3px;
 }
+
+.album_list p{
+	padding: 3px 0;
+	width: 120px;
+}
+
+.gray {color:#999999;}
+.gray a{color:#999999;}
+.gray a:hover{color:#999999;text-decoration:underline;}
+.orange a{color:#FE6C00;}
+.orange a:hover{color:#FE6C00;text-decoration:underline;}
+.section {border-top:1px solid #CCCCCC;}
+
+.album_bg {
+	background: url("/images/album_bg.gif") no-repeat scroll 0 0 transparent;
+	overflow: hidden;
+	padding: 6px 6px 20px;
+}
+
+.album_bg a {
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	width:100px;
+	height:100px;
+}

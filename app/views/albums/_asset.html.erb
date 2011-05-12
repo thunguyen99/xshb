@@ -1,0 +1,7 @@
+<%unless asset.nil?%>
+	<td style="padding-bottom: 20px;">
+		<div class="album_bg">
+			<a title="<%=asset.memo%>" href="<%=asset.photo.url%>" class="thickbox"><img src="<%=asset.photo.url(:thumb)%>"></a>
+		</div>
+	</td>
+<%end%>

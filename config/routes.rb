@@ -30,6 +30,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :panel_contents,:member => {:croper => :get,:crop => :put}
 
   map.resources :order_line_items,:member => {:update_quantity => :post}
+  
+  map.resources :albums,:member => {:assets_new => :get,:assets_create => :put,:assets_batch=>:put}
+  
+  map.resources :assets,:member => {:to_primary => :put}
 
   map.resources :orders,:member => {:mark => :get},
                         :collection => {:notify => :get,:done => :get,:show_order => :get}
