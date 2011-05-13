@@ -61,3 +61,9 @@
 
 <%=will_paginate @assets%>
 <%end%>
+
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$("a[rel='assets']").colorbox({slideshow:true,slideshowSpeed:5000});
+	})
+</script>
