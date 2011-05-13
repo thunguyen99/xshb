@@ -10,6 +10,8 @@ body, div, ul, li, form, table, ol, dl, dt, dd {margin:0px; padding:0px; list-st
 .blank30 {margin:0 auto; width:100%; height:30px; font-size:1px; line-height:1px; clear:both }
 .blank50 {margin:0 auto; width:100%; height:50px; font-size:1px; line-height:1px; clear:both }
 .clear {clear:both;}
+.fLeft {float:left;}
+.fRight {float:right;}
 .img {border:0; margin:0px; padding:0px}
 .hui {color:#696969; text-decoration:none}
 .hui:hover {color:#696969; text-decoration: none}
@@ -158,7 +160,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd {margin:0px; padding:0px; list-st
 .a503content{height:210px; overflow:hidden;}
 .a503content_01{height:75px; overflow:hidden;}
 .xs_vip #xsvip_submit {background:url(../images/xsok/xs14.jpg);width:121px;height:43px;border:0;cursor:pointer;}
-  #reception,#reception2j {display:none;}
+  #reception2j {display:none;}
 .p_form {width:70%;margin:auto;}
 .p_form h1{padding-bottom:10px;}
 .p_form div{padding:5px;}
@@ -221,7 +223,7 @@ body, div, ul, li, form, table, ol, dl, dt, dd {margin:0px; padding:0px; list-st
 .MemberMenu li {line-height:20px;}
 .MemberMenu span {border-bottom:1px solid #EAEAEA;border-top:1px solid #EAEAEA;color:#333333;display:block;font-size:12px;font-weight:bold;padding:2px 0;}
 .MemberMenu span div {margin:0 5px;}
-.MemberMenu a {color:#464646;display:block;padding:0 30px 0 0;text-indent:30px;}
+.MemberMenu a {color:#464646;display:block;padding:0 20px 0 0;text-indent:20px;}
 .MemberMain {float:right;width:80%;}
 .MemberMain .title {color:#464646;font-size:14px;font-weight:bold;margin:5px 0 10px;}
 .memberlist {color:#7E7E7E;}
@@ -235,9 +237,41 @@ body, div, ul, li, form, table, ol, dl, dt, dd {margin:0px; padding:0px; list-st
 .pagination span.disabled {padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd}
  form span.red {color:red;background:none;line-height:0;}
 .model_form {background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);}
-.model_form p {margin-left:150px; padding:10px;}
+.model_form p {margin-left:120px; padding:10px;}
 .model_form label {width:70px;float:left;}
 .model_form label em {color:red;}
+ .gifts span {display:block;}
+.gifts img {border:0px; margin:0px; padding:0px;}
+.gifts_01a {width:526px; height:330px; background:url(../images/gifts/g2.jpg) no-repeat; float:left; color:#FFF; font-size:14px; font-weight:bold}
+.gifts_01a ul {margin:20px 27px 36px 36px;}
+.gifts_01a p {text-indent:20px; line-height:24px; margin:0px;}
+.gifts_01b {float:left;}
+.gifts_footer {width:1000px; height:27px; background:url(../images/gifts/g6.jpg) no-repeat; color:#FFF; font-weight:bold; text-align:center; padding-top:60px;}
+.gfont_01 {font-size:24px; font-weight:bold; color:#FFF;}
+.gfont_01:hover {font-size:24px; font-weight:bold; color:#FFF;}
+.gfont_02 {font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
+.gfont_02:hover {font-size:14px; font-weight:bold; color:#F00; background-color:#ededed; padding:2px; margin:0 2px 0 2px; text-decoration:underline}
+ .cse form.gsc-search-box, form.gsc-search-box {padding:0px !important;}
+.gsc-adBlock,.gsc-adBlockVertical {display:none !important;}
+.gsc-thinWrapper {width:96% !important;}
+input.gsc-input {width: 165px !important; height: 19px !important; background: white !important; position: absolute; top: -38px; right: 125px}
+input.gsc-search-button {width: 50px !important; height: 23px !important; text-indent: -1000px; background: url(/images/eyok02.jpg) no-repeat !important; position: absolute; top: -39px; right: 72px}
+.gsc-clear-button {display: none}
+ #article_category {padding: 2%; font-size: 14px}
+#article_category .ac_result {margin-bottom: 6px; padding: 6px}
+#article_category .ac_title {height: 1.4em}
+#article_category .ac_title a{ color: #950000}
+#article_category .ac_content {padding-left: 15px}
+#article_category .ac_footer {color: #A25B08; font-size: 12px; padding-left: 15px; margin-top: 3px}
+.album_list p{ padding: 3px 0; width: 120px}
+.gray {color:#999999;}
+.gray a{color:#999999;}
+.gray a:hover{color:#999999;text-decoration:underline;}
+.orange a{color:#FE6C00;}
+.orange a:hover{color:#FE6C00;text-decoration:underline;}
+.section {border-top:1px solid #CCCCCC;}
+.album_bg {background: url("/images/album_bg.gif") no-repeat scroll 0 0 transparent; overflow: hidden; padding: 6px 6px 20px}
+.album_bg a {display:table-cell; text-align:center; vertical-align:middle; width:100px; height:100px}
    * {padding: 0; margin: 0}
    #TB_window {font: 14px Arial, Helvetica, sans-serif; color: #000; font-weight:bolder;}
 #TB_secondLine {font: 14px Arial, Helvetica, sans-serif; color:#666666; font-weight:bolder;}

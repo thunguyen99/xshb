@@ -6,7 +6,7 @@ javascripts:
   - thickbox-compressed
   - global
   - application
-  - jquery.colorbox-min
+  # - jquery.colorbox-min
 - signup:
   - jquery.validate
   - jquery.metadata
@@ -15,7 +15,7 @@ stylesheets:
 - base:
   - enjoyoungok
   - thickbox
-  - colorbox
+  # - colorbox
 - signup:
   - uni-form
   - default.uni-form
