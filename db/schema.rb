@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110512160416) do
+ActiveRecord::Schema.define(:version => 20110513073830) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
     t.text     "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "weight",     :default => 0
   end
 
   create_table "articles", :force => true do |t|
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20110512160416) do
 
   create_table "assets", :force => true do |t|
     t.string   "photo_file_name"
-    t.string   "photo_file_size"
+    t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "photo_content_type"
     t.integer  "resource_id"

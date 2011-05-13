@@ -57,7 +57,7 @@
 		str += '<p><label for="photo_'+asset_count+'">上传图片</label><input type="file" size="30" name="photo_'+asset_count+'[photo]" id="photo_'+asset_count+'_photo"></p>'
 		str += '<p><label for="photo_'+asset_count+'_name">图片名称</label><input type="text" value="" size="40" name="photo_'+asset_count+'_name" id="photo_'+asset_count+'_name"></p>'
 		str += '<p><label for="photo_'+asset_count+'_weight">图片权重</label><input type="text" value="" size="40" name="photo_'+asset_count+'_weight" id="photo_'+asset_count+'_weight"></p>'
-		str += '<p><label for="photo_'+asset_count+'_memo">图片简介</label><input type="text" value="" size="40" name="photo_'+asset_count+'_memo" id="photo_'+asset_count+'_memo"></p>'
+		str += '<p><label for="photo_'+asset_count+'_memo">图片简介</label><textarea name="photo_'+asset_count+'_memo" id="photo_'+asset_count+'_memo" cols="40"></textarea></p>'
 		$("#asset_count").val(asset_count);
 	    $("#more_assets").append(str);
     }

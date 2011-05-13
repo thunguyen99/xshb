@@ -10,10 +10,12 @@
 		<p class="orange">
 			<a title="<%=album.memo%>" <%unless album.assets.empty?%>href="/albums/<%=album.id%>"<%end%>><%=album.title%></a><span class="gray">(<%=album.assets.size%>)</span>
 		</p>
-		<p class="gray">
-			<a href="/albums/<%=album.id%>/edit">管理相册</a>
-			<span class="pipe">|</span>
-			<a href="/albums/<%=album.id%>/assets_new">上传图片</a>
-		</p>
+		<%if current_user && current_user.has_role?("admin")%>
+			<p class="gray">
+				<a href="/albums/<%=album.id%>/edit">管理相册</a>
+				<span class="pipe">|</span>
+				<a href="/albums/<%=album.id%>/assets_new">上传图片</a>
+			</p>
+		<%end%>
 	</td>
 <%end%>

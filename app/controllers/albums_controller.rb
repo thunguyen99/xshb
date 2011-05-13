@@ -1,12 +1,15 @@
 class AlbumsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required,:except=>[:index,:show]
 
   access_control do
     allow :admin
+    action :index,:show do
+      allow all
+    end
   end
   
   def index
-    @albums = Album.paginate(:all, :per_page => 12, :page => params[:page], :order  => 'albums.created_at DESC')
+    @albums = Album.paginate(:all, :per_page => 12, :page => params[:page], :order  => 'albums.weight DESC,albums.created_at DESC')
   end
 
   def new
