@@ -86,9 +86,9 @@ namespace :deploy do
 
   # add soft link script for deploy
   desc "Symlink the directories"
-  after "deploy:symlink", :roles => [:web] do
+  after "deploy:create_symlink", :roles => [:web] do
     ## create link for shared assets
-    run "ln -nfs #{deploy_to}/#{shared_dir}/assets #{deploy_to}/#{current_dir}/public/images/assets"
+    run "ln -nfs #{deploy_to}/#{shared_dir}/assets #{release_path}/public/images/assets"
 
     # backup_db
     migrate
@@ -105,7 +105,7 @@ namespace :deploy do
     db_config = "#{shared_path}/config/database.yml.production"
     run "cp #{db_config} #{release_path}/config/database.yml"
   end
-  
+
   desc "Create asset packages for production, minify and compress js and css files"
   task :asset_packager, :roles => [:web] do
     run <<-EOF
