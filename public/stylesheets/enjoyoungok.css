@@ -318,7 +318,7 @@ form span.red {color:red;background:none;line-height:0;}
 
 /*cse related*/
 .cse form.gsc-search-box, form.gsc-search-box {padding:0px !important;}
-.gsc-adBlock,.gsc-adBlockVertical {display:none !important;}
+/*.gsc-adBlock,.gsc-adBlockVertical {display:none !important;}*/
 .gsc-thinWrapper {width:96% !important;}
 input.gsc-input {
     width: 165px !important;
@@ -367,8 +367,8 @@ input.gsc-search-button {
 }
 
 .album_list p{
-	padding: 3px 0;
-	width: 120px;
+  padding: 3px 0;
+  width: 120px;
 }
 
 .gray {color:#999999;}
@@ -379,15 +379,15 @@ input.gsc-search-button {
 .section {border-top:1px solid #CCCCCC;}
 
 .album_bg {
-	background: url("/images/album_bg.gif") no-repeat scroll 0 0 transparent;
-	overflow: hidden;
-	padding: 6px 6px 20px;
+  background: url("/images/album_bg.gif") no-repeat scroll 0 0 transparent;
+  overflow: hidden;
+  padding: 6px 6px 20px;
 }
 
 .album_bg a {
-	display:table-cell;
-	text-align:center;
-	vertical-align:middle;
-	width:100px;
-	height:100px;
+  display:table-cell;
+  text-align:center;
+  vertical-align:middle;
+  width:100px;
+  height:100px;
 }
